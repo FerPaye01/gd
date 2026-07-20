@@ -369,6 +369,181 @@
             text-align: center;
         }
 
+        /* ── Módulo 1: Los datos generan valor ── */
+        .m1-content-shell {
+            width: 100%;
+            max-width: 52rem;
+            color: rgba(255,255,255,0.9);
+            box-sizing: border-box;
+        }
+        .m1-kicker {
+            color: #38bdf8;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 0.7rem;
+        }
+        .m1-section-title {
+            color: #ffffff;
+            font-size: 1.45rem;
+            line-height: 1.2;
+            text-align: center;
+            margin: 0 0 0.6rem;
+        }
+        .m1-lead {
+            color: rgba(255,255,255,0.78);
+            font-size: 0.82rem;
+            line-height: 1.55;
+            text-align: center;
+            max-width: 45rem;
+            margin: 0 auto 1rem;
+        }
+        .m1-pipeline {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            gap: 0.45rem;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        .m1-pipeline-step {
+            flex: 1 1 8rem;
+            min-width: 7.2rem;
+            padding: 0.75rem 0.55rem;
+            border: 1px solid rgba(56,189,248,0.28);
+            border-radius: 0.55rem;
+            background: linear-gradient(145deg, rgba(56,189,248,0.14), rgba(30,64,175,0.16));
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .m1-pipeline-step strong { display: block; color: #e0f2fe; font-size: 0.75rem; }
+        .m1-pipeline-step span { display: block; color: rgba(255,255,255,0.62); font-size: 0.61rem; margin-top: 0.2rem; }
+        .m1-pipeline-arrow { align-self: center; color: #22c55e; font-size: 1rem; }
+        .m1-objective-grid, .m1-compare-grid, .m1-benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.65rem;
+            width: 100%;
+        }
+        .m1-info-card {
+            padding: 0.8rem 0.9rem;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 0.55rem;
+            background: rgba(255,255,255,0.045);
+            box-sizing: border-box;
+        }
+        .m1-info-card h4 { color: #ffffff; font-size: 0.78rem; margin: 0 0 0.28rem; }
+        .m1-info-card p, .m1-info-card li { color: rgba(255,255,255,0.7); font-size: 0.68rem; line-height: 1.45; }
+        .m1-info-card p { margin: 0; }
+        .m1-info-card ul { margin: 0.35rem 0 0; padding-left: 1rem; }
+        .m1-icon { color: #38bdf8; margin-right: 0.35rem; }
+        .m1-nasa-card {
+            display: grid;
+            grid-template-columns: minmax(10rem, 0.8fr) minmax(15rem, 1.2fr);
+            gap: 1rem;
+            align-items: center;
+            width: 100%;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        .m1-nasa-visual {
+            min-height: 10rem;
+            border: 1px solid rgba(56,189,248,0.25);
+            border-radius: 0.7rem;
+            background: radial-gradient(circle at 68% 30%, rgba(248,113,113,0.35), transparent 12%), linear-gradient(145deg, #111827, #172554 65%, #0f766e);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0.8rem;
+            box-sizing: border-box;
+        }
+        .m1-nasa-visual i { color: #fbbf24; font-size: 2.8rem; margin-bottom: 0.55rem; }
+        .m1-nasa-visual strong { color: #ffffff; font-size: 0.83rem; }
+        .m1-nasa-visual span { color: rgba(255,255,255,0.65); font-size: 0.62rem; margin-top: 0.25rem; }
+        .m1-unit-row { display: flex; align-items: center; gap: 0.45rem; margin-top: 0.65rem; }
+        .m1-unit { flex: 1; padding: 0.65rem 0.45rem; border-radius: 0.45rem; text-align: center; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.05); }
+        .m1-unit strong { display: block; color: #ffffff; font-size: 0.76rem; }
+        .m1-unit span { display: block; color: rgba(255,255,255,0.62); font-size: 0.6rem; margin-top: 0.2rem; }
+        .m1-unit-warning { color: #f87171; font-size: 0.8rem; }
+        .m1-reveal-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.6rem;
+            width: 100%;
+        }
+        .m1-reveal-card {
+            min-height: 8.5rem;
+            padding: 0.8rem;
+            border: 1px solid rgba(56,189,248,0.22);
+            border-radius: 0.6rem;
+            background: linear-gradient(160deg, rgba(56,189,248,0.13), rgba(255,255,255,0.035));
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s, background 0.2s;
+            box-sizing: border-box;
+            color: white;
+            text-align: left;
+        }
+        .m1-reveal-card:hover, .m1-reveal-card:focus { transform: translateY(-2px); border-color: #38bdf8; outline: none; }
+        .m1-reveal-card.revealed { border-color: #22c55e; background: rgba(16,185,129,0.12); }
+        .m1-reveal-card h4 { color: #e0f2fe; font-size: 0.78rem; margin: 0 0 0.45rem; }
+        .m1-reveal-card .m1-reveal-hint { color: #38bdf8; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.06em; }
+        .m1-reveal-card .m1-reveal-body { display: none; color: rgba(255,255,255,0.76); font-size: 0.66rem; line-height: 1.45; }
+        .m1-reveal-card.revealed .m1-reveal-hint { display: none; }
+        .m1-reveal-card.revealed .m1-reveal-body { display: block; }
+        .m1-diagram {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.55rem;
+            align-items: center;
+            width: 100%;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        .m1-diagram-center {
+            grid-column: 2;
+            grid-row: 2;
+            padding: 1rem 0.6rem;
+            border: 2px solid #22c55e;
+            border-radius: 50%;
+            background: rgba(34,197,94,0.14);
+            color: #dcfce7;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .m1-diagram-item { padding: 0.55rem 0.35rem; border-radius: 0.45rem; color: rgba(255,255,255,0.82); font-size: 0.64rem; text-align: center; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); }
+        .m1-diagram-item:nth-child(1) { grid-column: 1; grid-row: 1; }
+        .m1-diagram-item:nth-child(2) { grid-column: 2; grid-row: 1; }
+        .m1-diagram-item:nth-child(3) { grid-column: 3; grid-row: 1; }
+        .m1-diagram-item:nth-child(4) { grid-column: 1; grid-row: 3; }
+        .m1-diagram-item:nth-child(5) { grid-column: 2; grid-row: 3; }
+        .m1-diagram-item:nth-child(6) { grid-column: 3; grid-row: 3; }
+        .m1-label { color: #38bdf8; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+        .m1-callout { margin-top: 0.7rem; padding: 0.65rem 0.8rem; border-left: 3px solid #22c55e; background: rgba(34,197,94,0.09); color: rgba(255,255,255,0.78); font-size: 0.7rem; line-height: 1.45; }
+        .m1-multi-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; width: 100%; max-width: 44rem; margin: 0 auto; }
+        .m1-multi-option { display: flex; gap: 0.55rem; align-items: flex-start; padding: 0.65rem 0.75rem; border: 1px solid rgba(255,255,255,0.14); border-radius: 0.5rem; background: rgba(255,255,255,0.045); color: rgba(255,255,255,0.82); font-size: 0.7rem; line-height: 1.35; cursor: pointer; }
+        .m1-multi-option:hover { border-color: #38bdf8; background: rgba(56,189,248,0.08); }
+        .m1-multi-option input { accent-color: #22c55e; margin-top: 0.12rem; }
+        .m1-action-btn { border: none; border-radius: 1.2rem; padding: 0.55rem 1.25rem; background: #0ea5e9; color: #ffffff; font-size: 0.72rem; font-weight: 700; cursor: pointer; }
+        .m1-action-btn:hover { background: #0284c7; }
+        .m1-key-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; width: 100%; max-width: 45rem; }
+        .m1-key-item { display: flex; gap: 0.55rem; align-items: flex-start; padding: 0.6rem 0.7rem; border-radius: 0.45rem; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.78); font-size: 0.68rem; line-height: 1.4; }
+        .m1-key-item strong { color: #22c55e; font-size: 0.78rem; }
+        @media (max-width: 700px) {
+            .m1-nasa-card { grid-template-columns: 1fr; }
+            .m1-reveal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .m1-multi-options, .m1-objective-grid, .m1-compare-grid, .m1-benefit-grid, .m1-key-grid { grid-template-columns: 1fr; }
+            .m1-diagram { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .m1-diagram-center { grid-column: 1 / -1; grid-row: 2; border-radius: 0.55rem; }
+            .m1-diagram-item:nth-child(1), .m1-diagram-item:nth-child(2), .m1-diagram-item:nth-child(3), .m1-diagram-item:nth-child(4), .m1-diagram-item:nth-child(5), .m1-diagram-item:nth-child(6) { grid-column: auto; grid-row: auto; }
+        }
+
         /* Exercise Cover Card */
         .exercise-cover-card {
             background: white;
@@ -1473,7 +1648,7 @@
                 <i class="fa-solid fa-chevron-up chevron"></i>
             </div>
             <div class="sidebar-section-body open">
-                <div class="subgroup-label">Módulo 1: Fundamentos y Marco</div>
+                <div class="subgroup-label">Módulo 1: Los datos generan valor</div>
                 <div class="sidebar-item" id="side-mod1_1" onclick="loadModule('1')"><span class="dot"></span>1.1. Introducción al Gobierno de Datos</div>
                 <div class="sidebar-item" onclick="openDownloadsModal('1')">&nbsp;&nbsp;&nbsp;&nbsp;1.2. Recursos y Normativa</div>
                 <div class="sidebar-item" onclick="window.location.href='06-evaluacion.html?module=1'"><span class="dot"></span>1.3. Evaluación</div>
@@ -1656,7 +1831,7 @@
     const modulesSlidesData = {
         "1": {
             title: "1.1. Introducción al Gobierno de Datos",
-            subtitle: "Módulo 1: Fundamentos y Marco",
+            subtitle: "Módulo 1: Los datos generan valor",
             salirHash: "#mod1_1",
             slides: [
                 {
@@ -3901,6 +4076,170 @@
         }
     };
 
+    // Nueva propuesta instruccional del Módulo 1: Los datos generan valor.
+    // Se mantiene separada del contenido histórico para facilitar la revisión
+    // y evitar cambios accidentales en los módulos 2 al 6.
+    modulesSlidesData["1"] = {
+        title: "1.1. Introducción al Gobierno de Datos",
+        subtitle: "Módulo 1: Los datos generan valor",
+        salirHash: "#mod1_1",
+        slides: [
+            {
+                type: "welcome",
+                title: "Los datos generan valor",
+                subtitle: "Introducción al Gobierno de Datos",
+                buttonText: "INICIAR<br><span style='font-size:0.75rem;font-weight:normal;'>haz clic para comenzar</span>",
+                visualHtml: "<div class='m1-content-shell' style='margin-top:0.15rem;'><div class='m1-pipeline'><div class='m1-pipeline-step'><strong>Dato</strong><span>Registro de un hecho</span></div><span class='m1-pipeline-arrow'>→</span><div class='m1-pipeline-step'><strong>Información</strong><span>Dato con contexto</span></div><span class='m1-pipeline-arrow'>→</span><div class='m1-pipeline-step'><strong>Decisión</strong><span>Acción sustentada</span></div><span class='m1-pipeline-arrow'>→</span><div class='m1-pipeline-step'><strong>Valor</strong><span>Resultado institucional</span></div></div></div>",
+                script: 'Bienvenidos al curso de Datapower: Impulsando Osinergmin con el Gobierno de Datos. Partamos del dato: un dato es el registro de un hecho. Por ejemplo, registramos datos como 120, 95 y 15. ¿No le dicen nada? Correcto. Ahora: 120 minutos de interrupción eléctrica, 95 de octanaje de gasolina o 15 milímetros de desplazamiento en un talud de relaves. Esos números se vuelven utilizables gracias a esa explicación necesaria. Diariamente generamos, consultamos, modificamos y compartimos datos para elaborar reportes, atender solicitudes, supervisar actividades, sustentar decisiones y, por ende, cumplir los objetivos institucionales. Para que estos trabajos fluyan adecuadamente, los datos deben ser confiables, comprensibles, seguros y disponibles. En este módulo conoceremos por qué los datos son activos importantes para Osinergmin, qué significa Gobierno de Datos y cómo puede contribuir a reducir errores, retrabajos y decisiones sostenidas en un dato que nadie puede respaldar. Antes de definir qué es Gobierno de Datos, pensemos en cuánto depende nuestro trabajo de los datos.'
+            },
+            {
+                type: "content",
+                title: "¿Por qué los datos importan para mi trabajo y para Osinergmin?",
+                contentHtml: "<div class='m1-content-shell'><div class='m1-kicker'>Pregunta guía del módulo</div><h3 class='m1-section-title'>¿Por qué los datos importan para mi trabajo y para Osinergmin?</h3><p class='m1-lead'>Los datos ya influyen en las actividades que realizamos. Ahora necesitamos interiorizar por qué requieren reglas y responsabilidades comunes.</p><div class='m1-objective-grid'><div class='m1-info-card'><h4><i class='fa-solid fa-chart-line m1-icon'></i>Reconocer el valor de los datos</h4></div><div class='m1-info-card'><h4><i class='fa-solid fa-scale-balanced m1-icon'></i>Explicar qué es Gobierno de Datos</h4></div><div class='m1-info-card'><h4><i class='fa-solid fa-arrows-left-right m1-icon'></i>Distinguir sus alcances</h4></div><div class='m1-info-card'><h4><i class='fa-solid fa-lightbulb m1-icon'></i>Identificar beneficios</h4></div></div></div>",
+                script: '¿Por qué los datos importan para mi trabajo y para Osinergmin? Esta es la pregunta que guiará el módulo. Los datos ya influyen en las actividades que realizamos y ahora necesitamos interiorizar por qué necesitan reglas y responsabilidades comunes. Para reconocer ese valor, imaginemos por un momento que los datos que utilizamos dejan de estar disponibles.'
+            },
+            {
+                type: "multiSelect",
+                title: "¿Qué ocurriría sin los datos?",
+                question: "Imagina que mañana no puedes utilizar los datos de tu área. ¿Qué impacto tendría en tu trabajo? Selecciona una o varias opciones.",
+                options: [
+                    "No podría continuar una actividad.",
+                    "Tendría que solicitar nuevamente la información.",
+                    "No podría sustentar una decisión.",
+                    "Aumentaría el tiempo de atención.",
+                    "Dependería de archivos o personas específicas."
+                ],
+                feedback: "Aunque el impacto varía según cada función, todos dependemos de datos para realizar nuestro trabajo.",
+                script: 'La pérdida o falta de disponibilidad de datos no afecta únicamente a los equipos técnicos. Puede impedir atender una solicitud, elaborar un informe, verificar un antecedente, sustentar una decisión o continuar un proceso. Incluso cuando los datos existen, también podemos tener dificultades si están incompletos, desactualizados o distribuidos en archivos que no coinciden. Esta dependencia muestra que los datos no son un residuo de los sistemas ni un elemento secundario: son un activo necesario para la operación y para el cumplimiento de las funciones de Osinergmin. Pero disponer de datos no es suficiente. Para generar valor, deben convertirse en información útil para decidir.'
+            },
+            {
+                type: "content",
+                title: "Ejemplo: la misión Mars Climate Orbiter",
+                contentHtml: "<div class='m1-content-shell'><div class='m1-kicker'>Cuando falta el contexto, el dato puede llevar a una decisión equivocada</div><div class='m1-nasa-card'><div class='m1-nasa-visual'><i class='fa-solid fa-rocket'></i><strong>Mars Climate Orbiter</strong><span>NASA · 1999 · misión perdida al llegar a Marte</span></div><div><p class='m1-lead' style='text-align:left;margin-bottom:0.65rem;'>Un equipo entregó datos en libras-fuerza y el software que los recibió los interpretó como newtons. Nadie se equivocó en el cálculo: faltó la unidad.</p><div class='m1-unit-row'><div class='m1-unit'><strong>libras-fuerza</strong><span>Unidad enviada</span></div><div class='m1-unit-warning'>≠</div><div class='m1-unit'><strong>newtons</strong><span>Unidad interpretada</span></div></div><div class='m1-callout'>¿Qué pasaría si un equipo reporta un desplazamiento en milímetros y otro lo interpreta como centímetros? El dato y el contexto que lo acompaña son un activo.</div></div></div></div>",
+                script: 'En 1999, la sonda Mars Climate Orbiter de la NASA se destruyó al llegar a Marte. Un equipo entregó datos en libras-fuerza y el software que los recibió los interpretó como newtons. Nadie se equivocó en el cálculo. Faltó la unidad. ¿Qué pasaría si en Osinergmin un equipo reporta un desplazamiento en milímetros y otro lo interpreta como centímetros? Esto muestra que el dato y el contexto que lo acompaña es un activo: algo que la institución posee, que tiene valor y que se deteriora si nadie lo cuida.'
+            },
+            {
+                type: "reveal",
+                title: "Del dato a la decisión",
+                kicker: "Haz clic en cada bloque",
+                instruction: "El valor no está en acumular datos, sino en comprenderlos y utilizarlos adecuadamente.",
+                cards: [
+                    { title: "Dato", icon: "fa-database", body: "Registro de un hecho. Por sí solo puede ser ambiguo: necesita contexto, unidad, fecha o definición." },
+                    { title: "Información", icon: "fa-file-lines", body: "Dato acompañado de contexto y significado. Permite responder qué ocurrió, cuándo y bajo qué condiciones." },
+                    { title: "Conocimiento", icon: "fa-brain", body: "Interpretación de la información para reconocer patrones, relaciones o causas." },
+                    { title: "Decisión", icon: "fa-compass", body: "Acción sustentada en conocimiento. Puede fallar si el dato es incorrecto, ambiguo o está desactualizado." }
+                ],
+                script: 'Un dato aislado con contexto se convierte en información. Cuando interpretamos esa información y reconocemos patrones o causas, obtenemos conocimiento. Finalmente, ese conocimiento permite adoptar una decisión o realizar una acción. Este recorrido también puede fallar: si el dato original es incorrecto, si su significado no está claro o si se utiliza una versión desactualizada, la decisión final puede ser equivocada. No se trata de acumular o recolectar más datos, sino de comprenderlos, administrarlos y utilizarlos con criterios comunes. Veamos qué ocurre cuando distintas fuentes responden de manera diferente a una misma pregunta.'
+            },
+            {
+                type: "exercise",
+                showCover: false,
+                title: "Una pregunta, tres respuestas",
+                exercise: {
+                    question: "La Alta Dirección solicita un indicador institucional. El Sistema A, un archivo del área B y un reporte del área C presentan valores diferentes. ¿Cuál debería utilizarse?",
+                    options: [
+                        { text: "El más reciente.", correct: false },
+                        { text: "El valor más alto.", correct: false },
+                        { text: "El resultado del sistema.", correct: false },
+                        { text: "No elegir todavía: primero verificar los datos.", correct: true }
+                    ],
+                    feedbackSuccess: "Antes de decidir, se debe verificar la definición del indicador, la fuente, la fecha, la versión, las reglas aplicadas y el responsable funcional.",
+                    feedbackError: "La fecha o el medio de presentación no garantizan por sí solos que el dato sea correcto. Primero verifica sus condiciones de generación y uso."
+                },
+                script: 'Esta situación puede ocurrir cuando distintas áreas utilizan definiciones, fuentes, fechas o formas de cálculo diferentes. Por ejemplo, para supervisiones realizadas en el trimestre, un área puede contar la fecha de la visita de campo y otra la fecha en que se aprobó el informe. Una supervisión de fin de marzo aparece en el primer trimestre para una y en el segundo para la otra. Ninguna está mal: simplemente nunca se acordó qué fecha manda. Elegir el valor más reciente, el más alto o el que aparece en un sistema no resuelve el problema. Antes de utilizarlo se necesita conocer qué significa, de dónde proviene, cómo fue calculado, qué versión se empleó y quién tiene la responsabilidad de validarlo. Este tipo de problemas permite comparar qué sucede cuando los datos se gestionan sin criterios acordados y qué cambia cuando existe Gobierno de Datos.'
+            },
+            {
+                type: "content",
+                title: "Sin Gobierno de Datos y con Gobierno de Datos",
+                contentHtml: "<div class='m1-content-shell'><div class='m1-kicker'>Del problema recurrente a la coordinación institucional</div><div class='m1-compare-grid'><div class='m1-info-card' style='border-top:3px solid #f87171;'><h4><i class='fa-solid fa-triangle-exclamation m1-icon' style='color:#f87171;'></i>Sin Gobierno de Datos</h4><ul><li>Definiciones distintas para una misma pregunta.</li><li>Fuentes y versiones difíciles de reconocer.</li><li>Responsabilidades implícitas o dispersas.</li><li>Soluciones aisladas y reactivas.</li><li>Correcciones y retrabajos repetidos.</li></ul></div><div class='m1-info-card' style='border-top:3px solid #22c55e;'><h4><i class='fa-solid fa-circle-check m1-icon' style='color:#22c55e;'></i>Con Gobierno de Datos</h4><ul><li>Criterios acordados y conocidos por todos.</li><li>Fuentes, definiciones y versiones identificadas.</li><li>Responsabilidades claras para validar y decidir.</li><li>Prevención, seguimiento y mejora continua.</li><li>Datos reutilizables sin perder su significado.</li></ul></div></div><div class='m1-callout'>El cambio principal es pasar de soluciones aisladas y reactivas a criterios acordados, responsabilidades claras y mejora continua.</div></div>",
+                script: 'El aporte del Gobierno de Datos es establecer una forma ordenada de prevenir, identificar y atender errores y diferencias. Cuando se reconocen las fuentes, las definiciones y las responsabilidades, disminuye la necesidad de reconstruir información o corregir repetidamente el resultado final. También se facilita que los datos puedan reutilizarse por diferentes áreas sin perder su significado. El cambio principal es pasar de soluciones aisladas y reactivas a criterios acordados y conocidos por todos, responsabilidades claras y mejora continua. A partir de esta comparación podemos formular una definición sencilla de Gobierno de Datos.'
+            },
+            {
+                type: "content",
+                title: "¿Qué es Gobierno de Datos?",
+                contentHtml: "<div class='m1-content-shell'><div class='m1-kicker'>Un marco organizacional</div><p class='m1-lead'>Es el marco que establece principios, responsabilidades, reglas, procesos y controles para que los datos sean confiables, seguros, comprensibles y útiles.</p><div class='m1-diagram'><div class='m1-diagram-item'>Principios</div><div class='m1-diagram-item'>Responsabilidades</div><div class='m1-diagram-item'>Reglas</div><div class='m1-diagram-item'>Procesos</div><div class='m1-diagram-item'>Controles</div><div class='m1-diagram-item'>Seguimiento</div><div class='m1-diagram-center'>Gobierno<br>de Datos</div></div><div class='m1-callout'>No es solamente una herramienta, un sistema, una actividad de limpieza ni una responsabilidad exclusiva de TI. Es una forma organizada de tomar decisiones y gestionar responsabilidades sobre los datos.</div></div>",
+                script: 'El Gobierno de Datos es un marco organizacional. Define cómo deben tomarse las decisiones relacionadas con los datos, quiénes participan, qué responsabilidades les corresponden y qué criterios deben cumplirse. Puede apoyarse en herramientas, sistemas y plataformas, pero no se reduce a ellos. Tampoco corresponde únicamente a GSTI o al equipo de analítica. En Osinergmin ya se toman esas decisiones todos los días: alguien define qué se registra, alguien decide quién accede y alguien valida una cifra antes de que salga. El Gobierno de Datos no crea esas decisiones; las ordena y las hace explícitas. Las áreas funcionales conocen el significado y uso de los datos, mientras que los equipos técnicos implementan y operan capacidades para gestionarlos. Por ello, el Gobierno de Datos requiere coordinación entre personas, procesos y tecnología. Para comprender mejor su alcance, debemos diferenciar el Gobierno de Datos de la Gestión de Datos.'
+            },
+            {
+                type: "content",
+                title: "Gobierno de Datos y Gestión de Datos",
+                contentHtml: "<div class='m1-content-shell'><div class='m1-kicker'>Son distintos, pero se necesitan mutuamente</div><div class='m1-compare-grid'><div class='m1-info-card' style='border-top:3px solid #38bdf8;'><h4><i class='fa-solid fa-compass m1-icon'></i>Gobierno de Datos</h4><p>Establece el rumbo y las condiciones.</p><ul><li>Responsabilidades.</li><li>Reglas y políticas.</li><li>Prioridades.</li><li>Criterios de decisión.</li><li>Mecanismos de supervisión.</li></ul></div><div class='m1-info-card' style='border-top:3px solid #22c55e;'><h4><i class='fa-solid fa-gears m1-icon' style='color:#22c55e;'></i>Gestión de Datos</h4><p>Ejecuta y mantiene las capacidades.</p><ul><li>Captura e integración.</li><li>Almacenamiento y transformación.</li><li>Documentación.</li><li>Protección y disponibilidad.</li><li>Controles y monitoreo.</li></ul></div></div><div class='m1-callout'>Una regla puede ser definida o validada por el área que conoce el proceso, mientras que su implementación puede requerir cambios en un formulario, una integración o una base de datos.</div></div>",
+                script: 'El Gobierno de Datos y la Gestión de Datos son complementarios. El Gobierno establece las reglas, responsabilidades, prioridades y mecanismos de supervisión. La Gestión aplica procesos y capacidades para capturar, almacenar, transformar, documentar, proteger y disponer los datos. Esto no significa que trabajen de manera separada. Los responsables funcionales y técnicos deben coordinar continuamente. Una regla puede ser definida o validada por el área que conoce el proceso, mientras que su implementación puede requerir cambios en un formulario, una integración o una base de datos. Cuando ambos componentes se articulan, se generan beneficios concretos para las personas y para la institución.'
+            },
+            {
+                type: "reveal",
+                title: "Beneficios del Gobierno de Datos",
+                kicker: "Haz clic en cada grupo",
+                instruction: "Ordenar hoy evita reprocesar mañana. Revisa los beneficios para el colaborador y para Osinergmin.",
+                cards: [
+                    { title: "Para el colaborador", icon: "fa-user", body: "<ul><li>Menos tiempo buscando o conciliando información.</li><li>Mayor claridad sobre fuentes y responsables.</li><li>Menos correcciones manuales repetitivas.</li><li>Mayor confianza para informar y decidir.</li><li>Mejor coordinación entre áreas.</li></ul>" },
+                    { title: "Para Osinergmin", icon: "fa-building-columns", body: "<ul><li>Información institucional más consistente.</li><li>Mejor supervisión, regulación y gestión.</li><li>Reducción de riesgos y errores.</li><li>Mayor reutilización e interoperabilidad.</li><li>Decisiones sustentadas en evidencia y valor público.</li></ul>" }
+                ],
+                script: 'Implementar Gobierno de Datos requiere acordar reglas, documentar responsabilidades y aplicar nuevos controles. Sin embargo, su finalidad no es generar trámites innecesarios. Busca reducir actividades que actualmente consumen tiempo, como comparar versiones, reconstruir cálculos, corregir archivos o identificar quién puede validar una información. Para Osinergmin, disponer de datos más confiables mejora la capacidad de supervisar, regular, gestionar recursos y sustentar decisiones. El beneficio se produce cuando las reglas y controles se integran al trabajo habitual y permiten prevenir problemas recurrentes. Estos principios no son exclusivos de Osinergmin. Forman parte del marco nacional de Gobierno Digital y Gobierno de Datos.'
+            },
+            {
+                type: "content",
+                title: "Marco nacional de Gobierno de Datos",
+                contentHtml: "<div class='m1-content-shell'><div class='m1-kicker'>Gobierno de Datos en el Estado peruano</div><div class='m1-key-grid'><div class='m1-key-item'><strong>01</strong><span><b>Decreto Legislativo N.° 1412</b><br>Ley de Gobierno Digital que establece el marco general para el Gobierno Digital en las entidades públicas.</span></div><div class='m1-key-item'><strong>02</strong><span><b>Decreto Supremo N.° 029-2021-PCM</b><br>Reglamento de la Ley de Gobierno Digital y disposiciones para su aplicación en el Estado.</span></div><div class='m1-key-item'><strong>03</strong><span><b>Estrategia Nacional de Gobierno de Datos 2026–2030</b><br>Aprobada mediante R. M. N.° 049-2026-PCM. Orienta una gestión estratégica, segura, ética e interoperable para generar valor público.</span></div><div class='m1-key-item'><strong><i class='fa-solid fa-flag'></i></strong><span>Lo importante no es memorizar los números de las normas, sino reconocer que las acciones institucionales forman parte de una política nacional.</span></div></div></div>",
+                script: 'El Gobierno de Datos se desarrolla dentro de un marco nacional más amplio. La Ley de Gobierno Digital establece las bases para el uso de tecnologías y datos en las entidades públicas. Su Reglamento desarrolla las disposiciones necesarias para aplicarla. Por su parte, la Estrategia Nacional de Gobierno de Datos orienta a las entidades para fortalecer sus capacidades, gestionar los datos como activos estratégicos y generar valor público. En este curso no es necesario memorizar los números de las normas. Lo importante es reconocer que las acciones institucionales forman parte de una política nacional y deben aplicarse de manera organizada, segura y responsable. A partir de este marco nacional, Osinergmin cuenta con documentos propios que orientan su aplicación institucional.'
+            },
+            {
+                type: "content",
+                title: "Marco institucional de Gobierno de Datos en Osinergmin",
+                contentHtml: "<div class='m1-content-shell'><div class='m1-kicker'>Del marco general a la aplicación institucional</div><div class='m1-compare-grid'><div class='m1-info-card' style='border-top:3px solid #38bdf8;'><h4><i class='fa-solid fa-book m1-icon'></i>Directiva de Gobernanza de Datos y Gestión de Productos de Datos</h4><p>Establece los principios, el alcance, las responsabilidades y los lineamientos institucionales para gestionar los datos como activos.</p></div><div class='m1-info-card' style='border-top:3px solid #22c55e;'><h4><i class='fa-solid fa-list-check m1-icon' style='color:#22c55e;'></i>PI59</h4><p>Procedimiento para la Gestión Estratégica de Datos y Productos de Datos en Osinergmin. Desarrolla actividades, participantes, responsabilidades, ciclo de gestión e instrumentos de aplicación.</p></div></div><div class='m1-callout'>La Directiva establece el marco general. El PI59 orienta su aplicación e indica cómo y con quiénes se implementa.</div></div>",
+                script: 'Osinergmin cuenta con un marco institucional propio. La Directiva establece los principios, responsabilidades y lineamientos generales para gestionar los datos como activos institucionales. Define qué se busca, por qué es importante y qué responsabilidades deben existir. El PI59 desarrolla la forma de aplicación: establece actividades, roles, instrumentos y criterios para gestionar estratégicamente los datos y los Productos de Datos. En términos sencillos, la Directiva establece el marco general y el PI59 ayuda a operativizarlo, indicando cómo y con quiénes se implementa. Ahora relacionemos algunos problemas frecuentes con los beneficios que puede aportar el Gobierno de Datos.'
+            },
+            {
+                type: "dragdrop",
+                title: "Del problema al beneficio",
+                instruction: "Relaciona cada situación con la mejora que permitiría atenderla. En móviles, selecciona un elemento y luego su destino.",
+                leftHeader: "Situaciones",
+                rightHeader: "Mejoras",
+                items: [
+                    { id: "m1-item-1", text: "Dos áreas utilizan definiciones diferentes.", shortText: "Definiciones diferentes", match: "m1-zone-c" },
+                    { id: "m1-item-2", text: "Existen varias versiones de un mismo archivo.", shortText: "Varias versiones", match: "m1-zone-d" },
+                    { id: "m1-item-3", text: "Nadie sabe quién debe validar un dato.", shortText: "Sin responsable", match: "m1-zone-a" },
+                    { id: "m1-item-4", text: "Cada mes se corrigen manualmente los mismos errores.", shortText: "Errores repetidos", match: "m1-zone-b" }
+                ],
+                zones: [
+                    { id: "m1-zone-a", title: "A. Responsabilidades identificadas", tag: "Responsabilidad", desc: "Aclara quién debe validar o tomar una decisión." },
+                    { id: "m1-zone-b", title: "B. Controles desde el origen", tag: "Mejora continua", desc: "Reduce correcciones manuales que se repiten." },
+                    { id: "m1-zone-c", title: "C. Definiciones comunes", tag: "Significado", desc: "Evita interpretaciones distintas del mismo dato." },
+                    { id: "m1-zone-d", title: "D. Fuentes y versiones reconocidas", tag: "Trazabilidad", desc: "Permite saber qué información debe utilizarse." }
+                ],
+                feedbackSuccess: "El Gobierno de Datos no elimina automáticamente los problemas. Establece las condiciones para prevenirlos, identificarlos y resolverlos de manera coordinada.",
+                feedbackError: "Revisa qué mejora atiende directamente la causa de la situación y vuelve a intentarlo.",
+                script: 'En esta actividad debes relacionar cada problema con una mejora concreta. Una definición común ayuda a evitar interpretaciones distintas. La identificación de fuentes y versiones permite saber qué información debe utilizarse. La asignación de responsabilidades aclara quién debe validar o tomar una decisión. Finalmente, los controles desde el origen permiten reducir correcciones manuales que se repiten. Estos elementos se desarrollarán con mayor detalle en los siguientes módulos. Apliquemos estas ideas al caso presentado anteriormente.'
+            },
+            {
+                type: "exercise",
+                showCover: false,
+                title: "Caso práctico: una decisión basada en datos",
+                exercise: {
+                    question: "La Alta Dirección solicita con urgencia un indicador institucional y tres fuentes presentan resultados diferentes. ¿Qué debería hacerse primero?",
+                    options: [
+                        { text: "Utilizar el archivo más reciente.", correct: false },
+                        { text: "Promediar los tres resultados.", correct: false },
+                        { text: "Elegir el resultado del sistema institucional.", correct: false },
+                        { text: "Verificar la definición, fuente, fecha, versión, reglas aplicadas y responsable.", correct: true }
+                    ],
+                    feedbackSuccess: "El Gobierno de Datos ayuda a:<br>• establecer una definición común;<br>• identificar la fuente correspondiente;<br>• asignar responsables;<br>• documentar reglas y versiones;<br>• verificar la calidad antes de decidir.",
+                    feedbackError: "El medio donde se encuentra el dato no garantiza por sí solo que sea correcto. Antes de utilizarlo deben revisarse sus condiciones de generación y uso."
+                },
+                script: 'La urgencia no elimina la necesidad de verificar la información. Elegir un archivo porque es reciente, utilizar automáticamente el resultado de un sistema o calcular un promedio puede ocultar el problema. La primera acción debe ser revisar qué significa el indicador, cuál es su fuente, qué periodo cubre, qué reglas se aplicaron, qué versión se utilizó y quién debe validarlo. El Gobierno de Datos aporta los criterios y responsabilidades necesarios para resolver este tipo de situaciones con mayor rapidez y confianza. Revisemos las ideas principales que debemos conservar de este módulo.'
+            },
+            {
+                type: "completion",
+                title: "Ideas clave",
+                subtitle: "Los datos generan valor cuando se comprenden y se utilizan con confianza",
+                contentHtml: "<div class='m1-key-grid'><div class='m1-key-item'><strong>1</strong><span>Los datos generan valor cuando pueden comprenderse y utilizarse con confianza.</span></div><div class='m1-key-item'><strong>2</strong><span>El Gobierno de Datos establece principios, reglas, responsabilidades y controles comunes.</span></div><div class='m1-key-item'><strong>3</strong><span>Gobierno y Gestión de Datos son diferentes, pero trabajan de manera coordinada.</span></div><div class='m1-key-item'><strong>4</strong><span>Todos los colaboradores participan en el uso responsable y confiable de los datos.</span></div></div>",
+                completionText: 'En el siguiente módulo conoceremos quiénes participan y qué responsabilidad corresponde a cada rol.',
+                buttonText: "Finalizar módulo",
+                script: 'En este módulo hemos comprendido que los datos sostienen actividades, decisiones y servicios. Sin embargo, para generar valor deben ser confiables, comprensibles y gestionados bajo criterios comunes. El Gobierno de Datos establece el marco para definir responsabilidades, reglas, controles y mecanismos de coordinación. No reemplaza la gestión técnica ni corresponde exclusivamente a TI. Requiere la participación de las áreas funcionales, los equipos técnicos y los usuarios. En el siguiente módulo conoceremos los principales roles y cómo se relacionan para atender las necesidades y problemas vinculados con los datos.'
+            }
+        ]
+    };
+
     let currentModuleId = "1";
     let currentSlideIndex = 0;
     let exerciseStarted = false;
@@ -3977,6 +4316,7 @@
                 <div class="welcome-center">
                     <h2 class="slide-title-large">${slide.title}</h2>
                     <h4 class="slide-subtitle-large">${slide.subtitle}</h4>
+                    ${slide.visualHtml || ''}
                     <div class="pulse-welcome-btn" onclick="nextSlide()">
                         ${slide.buttonText}
                     </div>
@@ -3992,8 +4332,42 @@
             `;
         } else if (slide.type === "content") {
             slideBody.innerHTML = slide.contentHtml;
+        } else if (slide.type === "multiSelect") {
+            let optionsHtml = '';
+            slide.options.forEach((option, index) => {
+                optionsHtml += '<label class="m1-multi-option"><input type="checkbox" value="' + index + '"><span>' + option + '</span></label>';
+            });
+            slideBody.innerHTML = `
+                <div class="m1-content-shell">
+                    <div class="m1-kicker">Actividad de reflexión</div>
+                    <h3 class="m1-section-title">${slide.title}</h3>
+                    <p class="m1-lead">${slide.question}</p>
+                    <div class="m1-multi-options">${optionsHtml}</div>
+                    <div style="display:flex;justify-content:center;margin-top:0.9rem;">
+                        <button class="m1-action-btn" onclick="checkModule1MultiSelect()">Verificar selección</button>
+                    </div>
+                    <div class="exercise-feedback" id="exercise-feedback" style="width:100%;max-width:44rem;margin:0.7rem auto 0;"></div>
+                </div>
+            `;
+        } else if (slide.type === "reveal") {
+            let cardsHtml = '';
+            slide.cards.forEach((card, index) => {
+                cardsHtml += '<article class="m1-reveal-card" tabindex="0" onclick="revealModule1Card(this)" onkeydown="if(event.key === \'Enter\' || event.key === \' \') revealModule1Card(this)">' +
+                    '<h4>' + (card.icon ? '<i class="fa-solid ' + card.icon + ' m1-icon"></i>' : '') + card.title + '</h4>' +
+                    '<span class="m1-reveal-hint">Haz clic para ver</span>' +
+                    '<div class="m1-reveal-body">' + card.body + '</div>' +
+                    '</article>';
+            });
+            slideBody.innerHTML = `
+                <div class="m1-content-shell">
+                    <div class="m1-kicker">${slide.kicker || 'Explora el concepto'}</div>
+                    <h3 class="m1-section-title">${slide.title}</h3>
+                    <p class="m1-lead">${slide.instruction || ''}</p>
+                    <div class="m1-reveal-grid">${cardsHtml}</div>
+                </div>
+            `;
         } else if (slide.type === "dragdrop") {
-            if (!exerciseStarted) {
+            if (!exerciseStarted && slide.showCover !== false) {
                 slideBody.innerHTML = `
                     <div class="exercise-cover-card">
                         <i class="fa-solid fa-puzzle-piece" style="font-size: 2.5rem; color: #0ea5e9;"></i>
@@ -4126,7 +4500,7 @@
                 `;
             }
         } else if (slide.type === "exercise") {
-            if (!exerciseStarted) {
+            if (!exerciseStarted && slide.showCover !== false) {
                 // Show Activity Cover Card (like referencia-inicio-actividad.png)
                 slideBody.innerHTML = `
                     <div class="exercise-cover-card">
@@ -4166,7 +4540,9 @@
                     <i class="fa-solid fa-circle-check" style="font-size:4.5rem;color:#22c55e;"></i>
                     <h2 class="slide-title-large" style="margin-top:1rem;">${slide.title}</h2>
                     <h3 class="slide-subtitle-large">${slide.subtitle}</h3>
-                    <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:0.8rem;max-width:25rem;">Has concluido con la lección interactiva de este módulo. Ya puedes presionar el botón "Salir de la actividad" arriba a la derecha para continuar.</p>
+                    ${slide.contentHtml || ''}
+                    <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:0.8rem;max-width:32rem;">${slide.completionText || 'Has concluido con la lección interactiva de este módulo. Ya puedes presionar el botón "Salir de la actividad" arriba a la derecha para continuar.'}</p>
+                    ${slide.buttonText ? '<button class="m1-action-btn" onclick="exitActivity()">' + slide.buttonText + '</button>' : ''}
                 </div>
             `;
         }
@@ -4176,6 +4552,27 @@
     function startExercise() {
         exerciseStarted = true;
         renderSlide();
+    }
+
+    // Module 1 interaction helpers
+    function checkModule1MultiSelect() {
+        const slide = modulesSlidesData[currentModuleId].slides[currentSlideIndex];
+        const feedbackEl = document.getElementById('exercise-feedback');
+        const selected = Array.from(document.querySelectorAll('.m1-multi-option input:checked'));
+
+        if (!feedbackEl) return;
+        if (selected.length === 0) {
+            feedbackEl.className = 'exercise-feedback error';
+            feedbackEl.innerHTML = '<strong>Selecciona al menos una opción.</strong> Piensa en una actividad de tu trabajo que dependa de los datos.';
+            return;
+        }
+
+        feedbackEl.className = 'exercise-feedback success';
+        feedbackEl.innerHTML = '<strong>Así es.</strong> ' + (slide.feedback || 'Aunque el impacto varía según cada función, todos dependemos de datos para realizar nuestro trabajo.');
+    }
+
+    function revealModule1Card(cardElement) {
+        if (cardElement) cardElement.classList.toggle('revealed');
     }
 
     // Check answer of multiple choice question
@@ -4373,10 +4770,10 @@
         }
     }
 
-    // Exit activity page and return to seccion-02.html with the right scroll anchor
+    // Exit activity page and return to the course content with the right scroll anchor
     function exitActivity() {
         const moduleData = modulesSlidesData[currentModuleId];
-        window.location.href = `seccion-02.html${moduleData.salirHash}`;
+        window.location.href = `05-seccion-02-contenido.html${moduleData.salirHash}`;
     }
 
     // Toggle native fullscreen for the slide-screen container directly
