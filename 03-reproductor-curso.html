@@ -377,7 +377,7 @@
             box-sizing: border-box;
         }
         .m1-kicker {
-            color: #38bdf8;
+            color: #fde047;
             font-size: 0.68rem;
             font-weight: 700;
             letter-spacing: 0.12em;
@@ -393,7 +393,7 @@
             margin: 0 0 0.6rem;
         }
         .m1-lead {
-            color: rgba(255,255,255,0.78);
+            color: #ffffff;
             font-size: 0.82rem;
             line-height: 1.55;
             text-align: center;
@@ -473,8 +473,8 @@
         .m1-unit-warning { color: #f87171; font-size: 0.8rem; }
         .m1-reveal-grid {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 0.6rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 0.8rem;
             width: 100%;
         }
         .m1-reveal-card {
@@ -499,31 +499,40 @@
         .m1-diagram {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.55rem;
+            gap: 0.7rem 0.8rem;
             align-items: center;
             width: 100%;
             max-width: 48rem;
-            margin: 0 auto;
+            margin: 0.8rem auto;
         }
         .m1-diagram-center {
             grid-column: 2;
             grid-row: 2;
-            padding: 1rem 0.6rem;
-            border: 2px solid #22c55e;
+            width: 125px;
+            height: 125px;
             border-radius: 50%;
-            background: rgba(34,197,94,0.14);
-            color: #dcfce7;
-            font-size: 0.78rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #22c55e;
+            background: radial-gradient(circle, rgba(34,197,94,0.25) 0%, rgba(56,189,248,0.15) 100%);
+            color: #ffffff;
+            font-size: 0.82rem;
             font-weight: 700;
+            line-height: 1.2;
+            box-shadow: 0 0 20px rgba(34,197,94,0.3);
             text-align: center;
         }
-        .m1-diagram-item { padding: 0.55rem 0.35rem; border-radius: 0.45rem; color: rgba(255,255,255,0.82); font-size: 0.64rem; text-align: center; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); }
+        .m1-diagram-item { padding: 0.65rem 0.45rem; border-radius: 0.5rem; color: rgba(255,255,255,0.9); font-size: 0.7rem; font-weight: 600; text-align: center; border: 1px solid rgba(56,189,248,0.25); background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(255,255,255,0.03)); box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.2s, border-color 0.2s; }
+        .m1-diagram-item:hover { border-color: #38bdf8; transform: translateY(-2px); }
         .m1-diagram-item:nth-child(1) { grid-column: 1; grid-row: 1; }
         .m1-diagram-item:nth-child(2) { grid-column: 2; grid-row: 1; }
         .m1-diagram-item:nth-child(3) { grid-column: 3; grid-row: 1; }
-        .m1-diagram-item:nth-child(4) { grid-column: 1; grid-row: 3; }
-        .m1-diagram-item:nth-child(5) { grid-column: 2; grid-row: 3; }
-        .m1-diagram-item:nth-child(6) { grid-column: 3; grid-row: 3; }
+        .m1-diagram-item:nth-child(4) { grid-column: 1; grid-row: 2; }
+        .m1-diagram-item:nth-child(5) { grid-column: 3; grid-row: 2; }
+        .m1-diagram-item:nth-child(6) { grid-column: 2; grid-row: 3; }
         .m1-label { color: #38bdf8; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
         .m1-callout { margin-top: 0.7rem; padding: 0.65rem 0.8rem; border-left: 3px solid #22c55e; background: rgba(34,197,94,0.09); color: rgba(255,255,255,0.78); font-size: 0.7rem; line-height: 1.45; }
         .m1-multi-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; width: 100%; max-width: 44rem; margin: 0 auto; }
@@ -1575,6 +1584,21 @@
         }
         .visual-tab-btn:hover {
             background: rgba(255, 255, 255, 0.05);
+        
+        /* Dynamic responsive styling for Slide 7 comparison image */
+        .m1-slide7-img {
+            max-width: 100%;
+            max-height: 290px;
+            width: auto;
+            height: auto;
+            border-radius: 12px;
+            object-fit: contain;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: max-height 0.3s ease;
+        }
+        :fullscreen .m1-slide7-img, html.fullscreen-active .m1-slide7-img {
+            max-height: calc(72vh - 130px) !important;
         }
     </style>
 </head>
@@ -1654,7 +1678,7 @@
                 <div class="sidebar-item" onclick="window.location.href='06-evaluacion.html?module=1'"><span class="dot"></span>1.3. Evaluación</div>
 
                 <div class="subgroup-label">Módulo 2: Roles y Responsabilidades</div>
-                <div class="sidebar-item" id="side-mod2_1" onclick="loadModule('2')"><span class="dot"></span>2.1. El Comité y el OGD</div>
+                <div class="sidebar-item" id="side-mod2_1" onclick="loadModule('2')"><span class="dot"></span>2.1. Roles y responsabilidades</div>
                 <div class="sidebar-item" onclick="openDownloadsModal('2')">&nbsp;&nbsp;&nbsp;&nbsp;2.2. Recursos y Normativa</div>
                 <div class="sidebar-item" onclick="window.location.href='06-evaluacion.html?module=2'"><span class="dot"></span>2.3. Evaluación</div>
 
@@ -2069,511 +2093,425 @@
             ]
         },
         "2": {
-            title: "2.1. El Ecosistema Humano",
-            subtitle: "Módulo 2: Roles y Responsabilidades",
+            title: "2.1. Roles y responsabilidades",
+            subtitle: "Módulo 2. Gobierno de Datos en acción",
             salirHash: "#mod2_1",
             slides: [
                 {
                     type: "welcome",
-                    title: "Gobierno de Datos",
-                    subtitle: "El Ecosistema Humano: Roles y Responsabilidades",
-                    buttonText: "COMPLETO<br><span style='font-size:0.75rem;font-weight:normal;'>haz clic para iniciar</span>",
-                    script: "Bienvenido al Módulo 2 del curso 'Gobierno de Datos: Fundamentos y Aplicaciones'. Haz clic en el botón circular en el centro para iniciar la lección sobre el Ecosistema Humano y sus roles."
+                    title: "Roles y responsabilidades",
+                    subtitle: "Módulo 2. Gobierno de Datos en acción",
+                    buttonText: "INICIAR MÓDULO<br><span style='font-size:0.75rem;font-weight:normal;'>haz clic para empezar</span>",
+                    script: "Bienvenido al segundo módulo. El Gobierno de Datos funciona cuando las responsabilidades están claras y las personas coordinan sus decisiones. En este módulo conoceremos quién define las reglas, quién documenta y da seguimiento, quién implementa los controles técnicos, quién utiliza los datos y quién supervisa el cumplimiento del marco. El objetivo es que puedas reconocer tu responsabilidad y saber con quién coordinar ante una necesidad o problema relacionado con los datos."
                 },
                 {
                     type: "intro",
                     title: "Módulo 2",
-                    subtitle: "Roles, Responsabilidades y Modelos Operativos",
+                    subtitle: "¿Cuál es mi responsabilidad y con quién debo coordinar?",
                     desc: "Curso desarrollado por la Oficina de Gobierno de Datos para Osinergmin",
-                    script: "En este módulo revisaremos los roles, las responsabilidades y los modelos operativos en el Gobierno de Datos. Aprenderemos cómo estructurar el ecosistema humano para pasar del caos a la sinfonía."
+                    contentHtml: `
+                        <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; width: 100%; max-width: 44rem; margin: 0.5rem auto 0;">
+                            <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(59,130,246,0.3); border-radius: 8px; padding: 0.7rem 0.9rem; display: flex; align-items: center; gap: 0.8rem;">
+                                <div style="background: rgba(59,130,246,0.15); border-radius: 50%; width: 2.4rem; height: 2.4rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fa-solid fa-user-shield" style="color:#60a5fa; font-size: 1.1rem;"></i>
+                                </div>
+                                <div style="font-size: 0.72rem; color: #fff; line-height: 1.35;">
+                                    <strong style="color:#60a5fa;">Reconocer roles</strong><br>Identificar los principales roles de Gobierno de Datos.
+                                </div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(168,85,247,0.3); border-radius: 8px; padding: 0.7rem 0.9rem; display: flex; align-items: center; gap: 0.8rem;">
+                                <div style="background: rgba(168,85,247,0.15); border-radius: 50%; width: 2.4rem; height: 2.4rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fa-solid fa-scale-balanced" style="color:#c084fc; font-size: 1.1rem;"></i>
+                                </div>
+                                <div style="font-size: 0.72rem; color: #fff; line-height: 1.35;">
+                                    <strong style="color:#c084fc;">Distinguir responsabilidades</strong><br>Diferenciar el ámbito funcional del técnico.
+                                </div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(245,158,11,0.3); border-radius: 8px; padding: 0.7rem 0.9rem; display: flex; align-items: center; gap: 0.8rem;">
+                                <div style="background: rgba(245,158,11,0.15); border-radius: 50%; width: 2.4rem; height: 2.4rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fa-solid fa-bullhorn" style="color:#fbbf24; font-size: 1.1rem;"></i>
+                                </div>
+                                <div style="font-size: 0.72rem; color: #fff; line-height: 1.35;">
+                                    <strong style="color:#fbbf24;">Identificar contactos</strong><br>Saber a quién acudir ante una incidencia con los datos.
+                                </div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; padding: 0.7rem 0.9rem; display: flex; align-items: center; gap: 0.8rem;">
+                                <div style="background: rgba(16,185,129,0.15); border-radius: 50%; width: 2.4rem; height: 2.4rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fa-solid fa-handshake" style="color:#34d399; font-size: 1.1rem;"></i>
+                                </div>
+                                <div style="font-size: 0.72rem; color: #fff; line-height: 1.35;">
+                                    <strong style="color:#34d399;">Actuación coordinada</strong><br>Seleccionar cómo atender un problema entre varios roles.
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    script: "Es importante comprender qué responsabilidad corresponde a cada rol. Ante un problema de datos, una sola persona o área no suele tener toda la respuesta. La coordinación de estos roles permite que la regla funcional sea validada, la solución analítica sea implementada y el uso posterior sea adecuado y ético."
                 },
                 {
                     type: "content",
-                    title: "La Cadena de Suministro del Dato",
+                    title: "Los datos son una responsabilidad compartida",
+                    contentHtml: `
+                        <div style="display:flex; flex-direction:column; align-items:center; gap:0.8rem; width:100%; max-width:46rem; margin:0 auto;">
+                            <div style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3); border-radius: 8px; padding: 0.5rem 1rem; text-align: center; color: #93c5fd; font-size: 0.75rem; font-weight: 600;">
+                                "Usted ya cumple un rol con los datos. Este módulo lo pone por escrito."
+                            </div>
+                            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; width: 100%;">
+                                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(251,146,60,0.3); border-radius:8px; padding:0.7rem; text-align:center;">
+                                    <i class="fa-solid fa-briefcase" style="color:#fb923c; font-size:1.4rem; margin-bottom:0.4rem;"></i>
+                                    <h5 style="font-size:0.78rem; color:#fb923c; margin:0 0 0.3rem 0; font-weight:700;">Área Funcional</h5>
+                                    <p style="font-size:0.62rem; color:rgba(255,255,255,0.8); margin:0; line-height:1.3;">Conoce el significado y el uso del dato en el negocio.</p>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(59,130,246,0.3); border-radius:8px; padding:0.7rem; text-align:center;">
+                                    <i class="fa-solid fa-server" style="color:#60a5fa; font-size:1.4rem; margin-bottom:0.4rem;"></i>
+                                    <h5 style="font-size:0.78rem; color:#60a5fa; margin:0 0 0.3rem 0; font-weight:700;">Equipos Técnicos</h5>
+                                    <p style="font-size:0.62rem; color:rgba(255,255,255,0.8); margin:0; line-height:1.3;">Implementan y operan las capacidades necesarias.</p>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(52,211,153,0.3); border-radius:8px; padding:0.7rem; text-align:center;">
+                                    <i class="fa-solid fa-users" style="color:#34d399; font-size:1.4rem; margin-bottom:0.4rem;"></i>
+                                    <h5 style="font-size:0.78rem; color:#34d399; margin:0 0 0.3rem 0; font-weight:700;">Usuarios</h5>
+                                    <p style="font-size:0.62rem; color:rgba(255,255,255,0.8); margin:0; line-height:1.3;">Registran, consultan y comparten datos responsablemente.</p>
+                                </div>
+                            </div>
+                            <div style="background:rgba(192,132,252,0.1); border:1px solid rgba(192,132,252,0.4); border-radius:8px; padding:0.5rem 1rem; text-align:center; width:100%; box-sizing:border-box;">
+                                <span style="font-size:0.72rem; color:#c084fc; font-weight:700;">Oficial de Gobierno de Datos (OGD):</span>
+                                <span style="font-size:0.68rem; color:rgba(255,255,255,0.85);"> Supervisa y articula de manera transversal el cumplimiento del marco.</span>
+                            </div>
+                        </div>
+                    `,
+                    script: "La calidad y el uso responsable de los datos no dependen únicamente de GSTI ni del Oficial de Gobierno de Datos. Las áreas funcionales conocen qué significa el dato y para qué se utiliza; los equipos técnicos mantienen los sistemas e implementan controles; y los usuarios influyen en la calidad cuando registran, consultan o comparten información. Estas responsabilidades ya existen y se ejercen todos los días. El Gobierno de Datos organiza estas responsabilidades para evitar vacíos, duplicidades y decisiones unilaterales."
+                },
+                {
+                    type: "content",
+                    title: "Roles",
                     contentHtml: `
                         <div style="display:flex; flex-direction:column; gap:0.5rem; width:100%; max-width:48rem; box-sizing:border-box;">
-                            <!-- Tabs Selector -->
-                            <div style="display:flex; justify-content:center; margin-bottom:0.2rem;">
-                                <div style="display:inline-flex; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:30px; padding:0.25rem; gap:0.25rem;">
-                                    <button id="btn-tab-negocio" onclick="
-                                        document.getElementById('tab-negocio').style.display='grid';
-                                        document.getElementById('tab-tecnico').style.display='none';
-                                        this.style.background='rgba(192,132,252,0.15)';
-                                        this.style.borderColor='rgba(192,132,252,0.4)';
-                                        this.style.color='#c084fc';
-                                        this.style.boxShadow='0 0 10px rgba(168,85,247,0.2)';
-                                        const btnTec = document.getElementById('btn-tab-tecnico');
-                                        btnTec.style.background='transparent';
-                                        btnTec.style.borderColor='transparent';
-                                        btnTec.style.color='rgba(255,255,255,0.5)';
-                                        btnTec.style.boxShadow='none';
-                                    " style="padding:0.35rem 1rem; border-radius:20px; border:1px solid rgba(192,132,252,0.4); background:rgba(192,132,252,0.15); color:#c084fc; font-size:0.62rem; font-weight:700; text-transform:uppercase; cursor:pointer; transition:all 0.25s; display:flex; align-items:center; gap:0.3rem; box-shadow:0 0 10px rgba(168,85,247,0.2); outline:none;">
-                                        <i class="fa-solid fa-users" style="font-size:0.7rem;"></i> Roles de Negocio y Estrategia
-                                    </button>
-                                    <button id="btn-tab-tecnico" onclick="
-                                        document.getElementById('tab-negocio').style.display='none';
-                                        document.getElementById('tab-tecnico').style.display='grid';
-                                        this.style.background='rgba(52,211,153,0.15)';
-                                        this.style.borderColor='rgba(52,211,153,0.4)';
-                                        this.style.color='#34d399';
-                                        this.style.boxShadow='0 0 10px rgba(52,211,153,0.2)';
-                                        const btnNeg = document.getElementById('btn-tab-negocio');
-                                        btnNeg.style.background='transparent';
-                                        btnNeg.style.borderColor='transparent';
-                                        btnNeg.style.color='rgba(255,255,255,0.5)';
-                                        btnNeg.style.boxShadow='none';
-                                    " style="padding:0.35rem 1rem; border-radius:20px; border:1px solid transparent; background:transparent; color:rgba(255,255,255,0.5); font-size:0.62rem; font-weight:700; text-transform:uppercase; cursor:pointer; transition:all 0.25s; display:flex; align-items:center; gap:0.3rem; outline:none;">
-                                        <i class="fa-solid fa-gears" style="font-size:0.7rem;"></i> Roles Técnicos y de Soporte
-                                    </button>
+                            <div style="font-size:0.7rem; color:rgba(255,255,255,0.9); text-align:center; margin-bottom:0.2rem;">
+                                Cada rol representa responsabilidad; no necesariamente un puesto exclusivo. Sobre todo responde una pregunta:
+                            </div>
+                            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; width: 100%;">
+                                <div style="background:rgba(251,146,60,0.08); border:1px solid rgba(251,146,60,0.3); border-radius:8px; padding:0.6rem; text-align:left;">
+                                    <div style="font-size:0.75rem; font-weight:700; color:#fb923c;">Dueño del Dato</div>
+                                    <div style="font-size:0.62rem; color:rgba(255,255,255,0.75); margin-top:0.2rem;">¿Qué significa y qué debe cumplir?</div>
+                                </div>
+                                <div style="background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.3); border-radius:8px; padding:0.6rem; text-align:left;">
+                                    <div style="font-size:0.75rem; font-weight:700; color:#fbbf24;">Gestor del Dato</div>
+                                    <div style="font-size:0.62rem; color:rgba(255,255,255,0.75); margin-top:0.2rem;">¿Cómo coordinamos y documentamos?</div>
+                                </div>
+                                <div style="background:rgba(59,130,246,0.08); border:1px solid rgba(59,130,246,0.3); border-radius:8px; padding:0.6rem; text-align:left;">
+                                    <div style="font-size:0.75rem; font-weight:700; color:#60a5fa;">Custodio Técnico</div>
+                                    <div style="font-size:0.62rem; color:rgba(255,255,255,0.75); margin-top:0.2rem;">¿Cómo se protege y mantiene disponible?</div>
+                                </div>
+                                <div style="background:rgba(52,211,153,0.08); border:1px solid rgba(52,211,153,0.3); border-radius:8px; padding:0.6rem; text-align:left;">
+                                    <div style="font-size:0.75rem; font-weight:700; color:#34d399;">Equipo BI, Analítica e IA</div>
+                                    <div style="font-size:0.62rem; color:rgba(255,255,255,0.75); margin-top:0.2rem;">¿Cómo se transforma y aprovecha?</div>
+                                </div>
+                                <div style="background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.3); border-radius:8px; padding:0.6rem; text-align:left;">
+                                    <div style="font-size:0.75rem; font-weight:700; color:#10b981;">Usuario o Solicitante</div>
+                                    <div style="font-size:0.62rem; color:rgba(255,255,255,0.75); margin-top:0.2rem;">¿Cómo se utiliza y reporta?</div>
+                                </div>
+                                <div style="background:rgba(192,132,252,0.08); border:1px solid rgba(192,132,252,0.3); border-radius:8px; padding:0.6rem; text-align:left;">
+                                    <div style="font-size:0.75rem; font-weight:700; color:#c084fc;">OGD</div>
+                                    <div style="font-size:0.62rem; color:rgba(255,255,255,0.75); margin-top:0.2rem;">¿Se cumple el marco de Gobierno de Datos?</div>
                                 </div>
                             </div>
-
-                            <!-- Pestaña 1: Negocio -->
-                            <div id="tab-negocio" style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; width: 100%;">
-                                <!-- Box 1 -->
-                                <div class="comparison-box blue-theme staggered-box staggered-box-1" style="padding:0.6rem 0.8rem; display:flex; flex-direction:row; align-items:flex-start; text-align:left; gap:0.8rem; border-top:3px solid #3b82f6; width:100%; box-sizing:border-box;">
-                                    <div class="icon-flip-container" style="height:1.8rem; width:1.8rem; margin:0; flex-shrink:0; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:50%; padding:0.2rem;">
-                                        <div class="icon-flip-inner auto-flip flip-delay-1" style="font-size:1rem; height:100%; width:100%;">
-                                            <i class="fa-solid fa-coins icon-food" style="color:#38bdf8; font-size:1rem;"></i>
-                                            <i class="fa-solid fa-users icon-corp" style="color:#38bdf8; font-size:1rem;"></i>
-                                        </div>
-                                    </div>
-                                    <div style="flex:1;">
-                                        <h5 style="font-size:0.78rem; font-weight:700; margin:0; color:#fff; line-height:1.2;">1. Alta Dirección</h5>
-                                        <span style="font-size:0.56rem; font-weight:600; color:#38bdf8; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-top:0.05rem;">Los Inversionistas</span>
-                                        <p style="font-size:0.64rem; color:rgba(255,255,255,0.7); line-height:1.3; margin:0.2rem 0 0 0;">Aprueban el modelo de gobernanza y priorizan los recursos de la institución.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Box 2 -->
-                                <div class="comparison-box blue-theme staggered-box staggered-box-2" style="padding:0.6rem 0.8rem; display:flex; flex-direction:row; align-items:flex-start; text-align:left; gap:0.8rem; border-top:3px solid #c084fc; width:100%; box-sizing:border-box;">
-                                    <div class="icon-flip-container" style="height:1.8rem; width:1.8rem; margin:0; flex-shrink:0; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:50%; padding:0.2rem;">
-                                        <div class="icon-flip-inner auto-flip flip-delay-2" style="font-size:1rem; height:100%; width:100%;">
-                                            <i class="fa-solid fa-clipboard-list icon-food" style="color:#c084fc; font-size:1rem;"></i>
-                                            <i class="fa-solid fa-user-tie icon-corp" style="color:#c084fc; font-size:1rem;"></i>
-                                        </div>
-                                    </div>
-                                    <div style="flex:1;">
-                                        <h5 style="font-size:0.78rem; font-weight:700; margin:0; color:#fff; line-height:1.2;">2. Oficial de Gobierno (OGD)</h5>
-                                        <span style="font-size:0.56rem; font-weight:600; color:#c084fc; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-top:0.05rem;">El Director Operativo</span>
-                                        <p style="font-size:0.64rem; color:rgba(255,255,255,0.7); line-height:1.3; margin:0.2rem 0 0 0;">Articula todas las áreas y supervisa la marcha general de la gobernanza (sin cocinar).</p>
-                                    </div>
-                                </div>
-
-                                <!-- Box 3 -->
-                                <div class="comparison-box blue-theme staggered-box staggered-box-3" style="padding:0.6rem 0.8rem; display:flex; flex-direction:row; align-items:flex-start; text-align:left; gap:0.8rem; border-top:3px solid #818cf8; width:100%; box-sizing:border-box;">
-                                    <div class="icon-flip-container" style="height:1.8rem; width:1.8rem; margin:0; flex-shrink:0; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:50%; padding:0.2rem;">
-                                        <div class="icon-flip-inner auto-flip flip-delay-3" style="font-size:1rem; height:100%; width:100%;">
-                                            <i class="fa-solid fa-utensils icon-food" style="color:#818cf8; font-size:1rem;"></i>
-                                            <i class="fa-solid fa-diagram-project icon-corp" style="color:#818cf8; font-size:1rem;"></i>
-                                        </div>
-                                    </div>
-                                    <div style="flex:1;">
-                                        <h5 style="font-size:0.78rem; font-weight:700; margin:0; color:#fff; line-height:1.2;">3. Líder del Dato</h5>
-                                        <span style="font-size:0.56rem; font-weight:600; color:#818cf8; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-top:0.05rem;">Gerente de Categoría</span>
-                                        <p style="font-size:0.64rem; color:rgba(255,255,255,0.7); line-height:1.3; margin:0.2rem 0 0 0;">Define la estrategia del menú de datos y resuelve conflictos funcionales entre gerencias.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Box 4 -->
-                                <div class="comparison-box blue-theme staggered-box staggered-box-4" style="padding:0.6rem 0.8rem; display:flex; flex-direction:row; align-items:flex-start; text-align:left; gap:0.8rem; border-top:3px solid #fb923c; width:100%; box-sizing:border-box;">
-                                    <div class="icon-flip-container" style="height:1.8rem; width:1.8rem; margin:0; flex-shrink:0; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:50%; padding:0.2rem;">
-                                        <div class="icon-flip-inner auto-flip flip-delay-4" style="font-size:1rem; height:100%; width:100%;">
-                                            <i class="fa-solid fa-tractor icon-food" style="color:#fb923c; font-size:1rem;"></i>
-                                            <i class="fa-solid fa-user-shield icon-corp" style="color:#fb923c; font-size:1rem;"></i>
-                                        </div>
-                                    </div>
-                                    <div style="flex:1;">
-                                        <h5 style="font-size:0.78rem; font-weight:700; margin:0; color:#fff; line-height:1.2;">4. Dueño de Datos (Owner)</h5>
-                                        <span style="font-size:0.56rem; font-weight:600; color:#fb923c; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-top:0.05rem;">Dueño de la Granja</span>
-                                        <p style="font-size:0.64rem; color:rgba(255,255,255,0.7); line-height:1.3; margin:0.2rem 0 0 0;">Asume responsabilidad legal, aprueba reglas de calidad y define quién accede a los datos.</p>
-                                    </div>
-                                </div>
+                            <div style="font-size:0.58rem; color:rgba(255,255,255,0.5); text-align:center; font-style:italic; margin-top:0.3rem;">
+                                Un rol representa responsabilidades; no necesariamente un puesto exclusivo.
                             </div>
-
-                            <!-- Pestaña 2: Técnico -->
-                            <div id="tab-tecnico" style="display:none; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; width: 100%;">
-                                <!-- Box 5 -->
-                                <div class="comparison-box green-theme staggered-box staggered-box-5" style="padding:0.6rem 0.8rem; display:flex; flex-direction:row; align-items:flex-start; text-align:left; gap:0.8rem; border-top:3px solid #f59e0b; width:100%; box-sizing:border-box;">
-                                    <div class="icon-flip-container" style="height:1.8rem; width:1.8rem; margin:0; flex-shrink:0; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:50%; padding:0.2rem;">
-                                        <div class="icon-flip-inner auto-flip flip-delay-5" style="font-size:1rem; height:100%; width:100%;">
-                                            <i class="fa-solid fa-warehouse icon-food" style="color:#f59e0b; font-size:1rem;"></i>
-                                            <i class="fa-solid fa-clipboard-check icon-corp" style="color:#f59e0b; font-size:1rem;"></i>
-                                        </div>
-                                    </div>
-                                    <div style="flex:1;">
-                                        <h5 style="font-size:0.78rem; font-weight:700; margin:0; color:#fff; line-height:1.2;">5. Gestor de Datos (Steward)</h5>
-                                        <span style="font-size:0.56rem; font-weight:600; color:#f59e0b; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-top:0.05rem;">Supervisor de Calidad</span>
-                                        <p style="font-size:0.64rem; color:rgba(255,255,255,0.7); line-height:1.3; margin:0.2rem 0 0 0;">Ejecuta controles operativos de calidad del dato en el día a día y coordina con áreas.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Box 6 -->
-                                <div class="comparison-box green-theme staggered-box staggered-box-6" style="padding:0.6rem 0.8rem; display:flex; flex-direction:row; align-items:flex-start; text-align:left; gap:0.8rem; border-top:3px solid #3b82f6; width:100%; box-sizing:border-box;">
-                                    <div class="icon-flip-container" style="height:1.8rem; width:1.8rem; margin:0; flex-shrink:0; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:50%; padding:0.2rem;">
-                                        <div class="icon-flip-inner auto-flip flip-delay-6" style="font-size:1rem; height:100%; width:100%;">
-                                            <i class="fa-solid fa-truck icon-food" style="color:#3b82f6; font-size:1rem;"></i>
-                                            <i class="fa-solid fa-database icon-corp" style="color:#3b82f6; font-size:1rem;"></i>
-                                        </div>
-                                    </div>
-                                    <div style="flex:1;">
-                                        <h5 style="font-size:0.78rem; font-weight:700; margin:0; color:#fff; line-height:1.2;">6. Custodio Técnico</h5>
-                                        <span style="font-size:0.56rem; font-weight:600; color:#3b82f6; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-top:0.05rem;">El Transportista</span>
-                                        <p style="font-size:0.64rem; color:rgba(255,255,255,0.7); line-height:1.3; margin:0.2rem 0 0 0;">Administra servidores físicos y virtuales, realiza respaldos e implementa la seguridad técnica.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Box 7 -->
-                                <div class="comparison-box green-theme staggered-box staggered-box-7" style="padding:0.6rem 0.8rem; display:flex; flex-direction:row; align-items:flex-start; text-align:left; gap:0.8rem; border-top:3px solid #34d399; width:100%; box-sizing:border-box;">
-                                    <div class="icon-flip-container" style="height:1.8rem; width:1.8rem; margin:0; flex-shrink:0; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:50%; padding:0.2rem;">
-                                        <div class="icon-flip-inner auto-flip flip-delay-7" style="font-size:1rem; height:100%; width:100%;">
-                                            <i class="fa-solid fa-bowl-food icon-food" style="color:#34d399; font-size:1rem;"></i>
-                                            <i class="fa-solid fa-chart-column icon-corp" style="color:#34d399; font-size:1rem;"></i>
-                                        </div>
-                                    </div>
-                                    <div style="flex:1;">
-                                        <h5 style="font-size:0.78rem; font-weight:700; margin:0; color:#fff; line-height:1.2;">7. Equipo BI / Analítica</h5>
-                                        <span style="font-size:0.56rem; font-weight:600; color:#34d399; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-top:0.05rem;">El Chef Gourmet</span>
-                                        <p style="font-size:0.64rem; color:rgba(255,255,255,0.7); line-height:1.3; margin:0.2rem 0 0 0;">Toma los datos limpios y diseña modelos predictivos y tableros visuales para el negocio.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Box 8 -->
-                                <div class="comparison-box green-theme staggered-box staggered-box-8" style="padding:0.6rem 0.8rem; display:flex; flex-direction:row; align-items:flex-start; text-align:left; gap:0.8rem; border-top:3px solid #10b981; width:100%; box-sizing:border-box;">
-                                    <div class="icon-flip-container" style="height:1.8rem; width:1.8rem; margin:0; flex-shrink:0; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:50%; padding:0.2rem;">
-                                        <div class="icon-flip-inner auto-flip flip-delay-8" style="font-size:1rem; height:100%; width:100%;">
-                                            <i class="fa-solid fa-mug-hot icon-food" style="color:#10b981; font-size:1rem;"></i>
-                                            <i class="fa-solid fa-circle-user icon-corp" style="color:#10b981; font-size:1rem;"></i>
-                                        </div>
-                                    </div>
-                                    <div style="flex:1;">
-                                        <h5 style="font-size:0.78rem; font-weight:700; margin:0; color:#fff; line-height:1.2;">8. Usuario de Datos</h5>
-                                        <span style="font-size:0.56rem; font-weight:600; color:#10b981; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-top:0.05rem;">El Comensal</span>
-                                        <p style="font-size:0.64rem; color:rgba(255,255,255,0.7); line-height:1.3; margin:0.2rem 0 0 0;">Consume la información final bajo políticas estrictas de confidencialidad y ética pública.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="font-size: 0.52rem; color: rgba(255,255,255,0.4); text-align: center; margin-top: 0.2rem; font-style: italic;">
-                            Pasa el cursor sobre un cuadro para recordar su analogía gastronómica
                         </div>
                     `,
-                    script: "Implementar tecnología sin definir roles es simplemente automatizar el desorden. En muchas entidades públicas sufrimos del síndrome de la 'Propiedad Difusa': todos modifican y usan la información, pero cuando hay un error crítico, nadie rinde cuentas. Para solucionar esto y asegurar la calidad, nuestro Procedimiento Interno PI-59 establece 8 roles oficiales. Para entenderlos sin tecnicismos, asociemos el ciclo de vida de nuestros datos con la cadena de suministro de un restaurante de alta cocina: La Alta Dirección son los Inversionistas; aprueban el modelo de gobernanza y priorizan los recursos. El Oficial de Gobierno de Datos (OGD) es el Director Operativo; articula a todas las áreas y supervisa que el restaurante funcione, pero no cocina. El Líder del Dato (Head of Data) es el Gerente de Categoría; define la estrategia del menú y resuelve conflictos funcionales entre áreas. El Dueño de Datos (Data Owner) es el Dueño de la Granja; asume la responsabilidad legal, decide quién accede a sus ingredientes y aprueba sus reglas de calidad. El Gestor de Datos (Data Steward) es el Supervisor de Calidad; ejecuta los controles operativos día a día y coordina con las áreas usuarias. El Custodio Técnico (Data Custodian) es el Transportista y Jefe de Seguridad; administra los servidores, implementa respaldos y habilita accesos técnicos protegiendo la carga. El Equipo de Analítica es el Chef; toma los ingredientes limpios y diseña soluciones visuales para el negocio. Y finalmente, el Usuario de Datos es el Comensal; quien consume la información bajo estrictas políticas de confidencialidad y uso correcto."
+                    script: "Los roles permiten distribuir las decisiones y tareas relacionadas con los datos. Un rol tiene responsabilidades y puede ser asumido por una persona según la designación institucional. En las siguientes diapositivas revisaremos los roles para comprender que cada uno aporta una perspectiva diferente y que ninguno reemplaza a los demás."
                 },
                 {
                     type: "content",
-                    title: "El Oficial de Gobierno de Datos y la Gobernanza No Invasiva",
+                    title: "Dueño del Dato",
                     contentHtml: `
-                        <div class="ogd-governance-layout" style="display:flex; align-items:stretch; justify-content:center; gap:1.2rem; width:100%; padding:0.5rem 0;">
-                            <!-- Left: Rigor Normativo -->
-                            <div class="gov-card rigor-card" style="flex:1; background:rgba(255,255,255,0.03); border:1px solid rgba(239, 68, 68, 0.2); border-radius:12px; padding:0.8rem; display:flex; flex-direction:column; align-items:center; text-align:center;">
-                                <div style="background:rgba(239, 68, 68, 0.1); border-radius:50%; width:3.2rem; height:3.2rem; display:flex; align-items:center; justify-content:center; margin-bottom:0.6rem; border:1px solid rgba(239, 68, 68, 0.3);">
-                                    <i class="fa-solid fa-scale-balanced" style="font-size:1.6rem; color:#ef4444;"></i>
-                                </div>
-                                <h4 style="font-size:0.85rem; color:#ef4444; font-weight:700; margin:0 0 0.4rem 0; text-transform:uppercase; letter-spacing:1px;">Rigor Normativo</h4>
-                                <div style="font-size:0.64rem; color:rgba(255,255,255,0.9); line-height:1.35; text-align:left; width:100%;">
-                                    <p style="margin:0 0 0.3rem 0;"><strong>• Resoluciones SGTD</strong><br>N° 001-2022 y 002-2023-PCM/SGTD.</p>
-                                    <p style="margin:0 0 0.3rem 0;"><strong>• Comité de Gobierno Digital</strong><br>Órgano que aprueba formalmente el Plan de Acción de Gobierno de Datos.</p>
-                                    <p style="margin:0;"><strong>• Procedimiento PI-59</strong><br>Norma interna de Osinergmin con reporte directo a la Alta Dirección.</p>
-                                </div>
+                        <div style="display:flex; flex-direction:column; gap:0.6rem; width:100%; max-width:44rem;">
+                            <div style="background:rgba(251,146,60,0.1); border:1px solid rgba(251,146,60,0.3); border-radius:8px; padding:0.5rem 0.8rem; text-align:center;">
+                                <strong style="color:#fb923c; font-size:0.8rem;">Responsabilidad funcional</strong>
                             </div>
-                            
-                            <!-- Center: Director de Orquesta -->
-                            <div class="gov-card center-conductor-card" style="flex:1.2; background:linear-gradient(135deg, rgba(147, 51, 234, 0.15), rgba(59, 130, 246, 0.15)); border:2px solid rgba(168, 85, 247, 0.4); border-radius:16px; padding:1rem; display:flex; flex-direction:column; align-items:center; text-align:center; box-shadow:0 8px 24px rgba(168,85,247,0.15); position:relative;">
-                                <div class="conductor-pulse" style="position:absolute; width:100%; height:100%; top:0; left:0; border-radius:16px; border: 1px solid rgba(168, 85, 247, 0.15); animation: pulseBorder 2s infinite;"></div>
-                                <div style="background:rgba(168, 85, 247, 0.2); border-radius:50%; width:4.2rem; height:4.2rem; display:flex; align-items:center; justify-content:center; margin-bottom:0.7rem; border:2px solid rgba(168, 85, 247, 0.5); box-shadow:0 0 12px rgba(168, 85, 247, 0.3);">
-                                    <i class="fa-solid fa-music" style="font-size:1.8rem; color:#c084fc; animation: floatConductor 3s ease-in-out infinite;"></i>
+                            <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem;">
+                                <div style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.3); border-radius:8px; padding:0.8rem;">
+                                    <div style="font-size:0.78rem; font-weight:700; color:#34d399; margin-bottom:0.4rem; display:flex; align-items:center; gap:0.4rem;">
+                                        <i class="fa-solid fa-check-circle"></i> Define o valida:
+                                    </div>
+                                    <ul style="font-size:0.65rem; color:rgba(255,255,255,0.85); line-height:1.4; padding-left:1.1rem; margin:0;">
+                                        <li>El significado y alcance del dato.</li>
+                                        <li>Las reglas de negocio y calidad.</li>
+                                        <li>Las condiciones de uso.</li>
+                                        <li>Las prioridades y la conformidad funcional.</li>
+                                    </ul>
                                 </div>
-                                <h4 style="font-size:0.95rem; color:#c084fc; font-weight:700; margin:0 0 0.2rem 0; text-transform:uppercase; letter-spacing:1px;">El OGD</h4>
-                                <div style="font-size:0.7rem; color:#ffffff; font-weight:600; margin-bottom:0.4rem;">Director de la Orquesta Sinfónica</div>
-                                <p style="font-size:0.62rem; color:rgba(255,255,255,0.85); line-height:1.35; margin:0; text-align:justify;">
-                                    Supervisa y asegura que el <strong>Dueño</strong>, el <strong>Gestor</strong> y el <strong>Custodio</strong> sigan la misma partitura de calidad, pero <strong>no toca ningún instrumento</strong> (no es dueño de los datos).
-                                </p>
-                            </div>
-                            
-                            <!-- Right: Tranquilidad Cultural -->
-                            <div class="gov-card culture-card" style="flex:1; background:rgba(255,255,255,0.03); border:1px solid rgba(16, 185, 129, 0.2); border-radius:12px; padding:0.8rem; display:flex; flex-direction:column; align-items:center; text-align:center;">
-                                <div style="background:rgba(16, 185, 129, 0.1); border-radius:50%; width:3.2rem; height:3.2rem; display:flex; align-items:center; justify-content:center; margin-bottom:0.6rem; border:1px solid rgba(16, 185, 129, 0.3);">
-                                    <i class="fa-solid fa-hands-holding" style="font-size:1.6rem; color:#10b981;"></i>
-                                </div>
-                                <h4 style="font-size:0.85rem; color:#10b981; font-weight:700; margin:0 0 0.4rem 0; text-transform:uppercase; letter-spacing:1px;">Tranquilidad Cultural</h4>
-                                <div style="font-size:0.64rem; color:rgba(255,255,255,0.9); line-height:1.4; text-align:left; width:100%;">
-                                    <p style="margin:0 0 0.4rem 0;"><strong>• Gobernanza No Invasiva</strong><br>Propuesta metodológica de Robert S. Seiner.</p>
-                                    <p style="margin:0;"><strong>• "Formalizar lo que ya haces"</strong><br>No crea burocracia ni nuevos puestos; reconoce y oficializa tu rol operativo actual.</p>
+                                <div style="background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.3); border-radius:8px; padding:0.8rem;">
+                                    <div style="font-size:0.78rem; font-weight:700; color:#f87171; margin-bottom:0.4rem; display:flex; align-items:center; gap:0.4rem;">
+                                        <i class="fa-solid fa-times-circle"></i> No le corresponde:
+                                    </div>
+                                    <p style="font-size:0.65rem; color:rgba(255,255,255,0.85); line-height:1.4; margin:0;">
+                                        Programar controles ni administrar infraestructura técnica.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     `,
-                    script: "Es fundamental entender que el Oficial de Gobierno de Datos (OGD) no es el dueño absoluto de toda la información de la entidad. En realidad, actúa como el Director de una Orquesta Sinfónica: se asegura de que el Dueño, el Gestor y el Custodio sigan exactamente la misma partitura de calidad, pero él no toca ningún instrumento. Este rol está estrictamente respaldado por la Presidencia del Consejo de Ministros mediante las Resoluciones SGTD N° 001-2022 y 002-2023, y operativizado en Osinergmin a través de nuestro PI-59, exigiendo un reporte directo a la Alta Dirección. Asimismo, es el Comité de Gobierno y Transformación Digital de la entidad el encargado de aprobar formalmente el Plan de Acción de Gobierno de Datos. ¿Significa esto que crearemos nuevas burocracias o amenazaremos la cultura de la institución? Absolutamente no. Aquí aplicamos el principio de la Gobernanza de Datos No Invasiva. No estamos inventando puestos de trabajo adicionales; estamos identificando y formalizando las responsabilidades que ustedes, como colaboradores, ya ejercen sobre la información en su día a día. En palabras simples: si por tu función actual ya defines, produces o consumes datos, en la práctica ya eres un custodio. El modelo simplemente oficializa y reconoce tu rol para garantizar la trazabilidad y la transparencia en beneficio del ciudadano."
-                },
-
-                {
-                    type: "content",
-                    title: "¿Quién cocina nuestros datos?",
-                    contentHtml: `
-                        <div style="display:flex;flex-direction:column;align-items:center;width:100%;color:white;font-size:0.75rem;gap:0.6rem;">
-                            <h4 style="font-size:1rem;color:#f59e0b;font-weight:700;margin:0;text-transform:uppercase;letter-spacing:1px;">¿Quién cocina nuestros datos?</h4>
-                            <div style="display:flex;align-items:center;justify-content:center;gap:0;width:100%;max-width:38rem;">
-                                <div style="display:flex;flex-direction:column;align-items:center;gap:0.25rem;flex:1;">
-                                    <div style="background:rgba(251,191,36,0.12);border:2px solid #f59e0b;border-radius:50%;width:3.8rem;height:3.8rem;display:flex;align-items:center;justify-content:center;">
-                                        <i class="fa-solid fa-wheat-awn" style="font-size:1.6rem;color:#fbbf24;"></i>
-                                    </div>
-                                    <div style="font-weight:700;color:#fbbf24;font-size:0.6rem;text-transform:uppercase;">🌾 Granja (Negocio)</div>
-                                    <div style="font-size:0.5rem;color:rgba(255,255,255,0.6);text-align:center;max-width:6rem;line-height:1.3;">Define reglas de calidad y el propósito del dato</div>
-                                </div>
-                                <div style="display:flex;align-items:center;justify-content:center;flex-shrink:0;width:2rem;">
-                                    <i class="fa-solid fa-arrow-right" style="color:rgba(255,255,255,0.25);font-size:1.1rem;"></i>
-                                </div>
-                                <div style="display:flex;flex-direction:column;align-items:center;gap:0.25rem;flex:1;">
-                                    <div style="background:rgba(59,130,246,0.12);border:2px solid #3b82f6;border-radius:50%;width:3.8rem;height:3.8rem;display:flex;align-items:center;justify-content:center;">
-                                        <i class="fa-solid fa-truck" style="font-size:1.6rem;color:#60a5fa;"></i>
-                                    </div>
-                                    <div style="font-weight:700;color:#60a5fa;font-size:0.6rem;text-transform:uppercase;">🚚 Transporte (TI)</div>
-                                    <div style="font-size:0.5rem;color:rgba(255,255,255,0.6);text-align:center;max-width:6rem;line-height:1.3;">Gestiona almacenamiento, respaldos y accesos</div>
-                                </div>
-                                <div style="display:flex;align-items:center;justify-content:center;flex-shrink:0;width:2rem;">
-                                    <i class="fa-solid fa-arrow-right" style="color:rgba(255,255,255,0.25);font-size:1.1rem;"></i>
-                                </div>
-                                <div style="display:flex;flex-direction:column;align-items:center;gap:0.25rem;flex:1;">
-                                    <div style="background:rgba(16,185,129,0.12);border:2px solid #10b981;border-radius:50%;width:3.8rem;height:3.8rem;display:flex;align-items:center;justify-content:center;">
-                                        <i class="fa-solid fa-utensils" style="font-size:1.6rem;color:#34d399;"></i>
-                                    </div>
-                                    <div style="font-weight:700;color:#34d399;font-size:0.6rem;text-transform:uppercase;">🍽️ Mesa (Consumidor)</div>
-                                    <div style="font-size:0.5rem;color:rgba(255,255,255,0.6);text-align:center;max-width:6rem;line-height:1.3;">Usuario final / Ciudadano beneficiado</div>
-                                </div>
-                            </div>
-                            <div style="width:100%;max-width:36rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:0.4rem 0.6rem;text-align:center;font-size:0.58rem;color:rgba(255,255,255,0.75);line-height:1.4;">
-                                <strong style="color:#f59e0b;">Lección clave:</strong> TI no es dueño del significado del dato. Solo el Negocio (Dueño/Gestor) define las reglas de calidad y el propósito.
-                            </div>
-                        </div>
-                    `,
-                    script: "Para entender los roles de gobernanza, utilicemos la analogía de la preparación de alimentos. Así como el productor de ingredientes es el Negocio que define las reglas del dato, el transportista es TI que solo gestiona la infraestructura sin ser dueño de su significado. El consumidor final es el ciudadano que recibe el servicio."
+                    script: "El Dueño del Dato tiene la responsabilidad funcional. Conoce el proceso de negocio y valida qué significa el dato, qué reglas debe cumplir y bajo qué condiciones puede utilizarse. Si dos áreas cuentan distinto un mismo indicador, es quien decide qué definición prevalece. No necesita programar ni administrar una base de datos. Su responsabilidad es tomar o validar las decisiones funcionales que luego deberán ser documentadas e implementadas por los roles correspondientes."
                 },
                 {
                     type: "content",
-                    title: "El Oficial de Gobierno de Datos (OGD)",
+                    title: "Gestor del Dato",
                     contentHtml: `
-                        <div class="slide-visual-mockup" style="max-width: 50rem; padding: 0.6rem;">
-                            <div style="display: flex; gap: 1rem; align-items: stretch; width: 100%;">
-                                <!-- Left Column: Visual Content (Diagram or Image) -->
-                                <div style="flex: 1.25; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.15); border-radius: 6px; padding: 0.4rem; border: 1px solid rgba(255,255,255,0.05); min-height: 280px; position: relative;">
-                                    
-                                    <!-- Tab Content 1: CSS Diagram -->
-                                    <div id="visual-tab-interactive-content" style="width:100%;">
-                                        <div class="roles-org-chart">
-                                            <!-- Row 1: Alta Dirección -->
-                                            <div class="chart-row">
-                                                <div class="chart-card card-director">
-                                                    <i class="fa-solid fa-users card-icon" style="color:#38bdf8;"></i>
-                                                    <div class="card-title">Alta Dirección</div>
-                                                    <div style="font-size:0.5rem; color:#94a3b8; font-weight: normal; line-height: 1.1;">Estratégico / Patrocinio</div>
-                                                </div>
-                                            </div>
-                                            
-                                            <!-- Vertical connector -->
-                                            <div class="chart-line-vertical"></div>
-                                            
-                                            <!-- Staff line & OGD -->
-                                            <div class="chart-row-staff">
-                                                <div class="chart-line-horizontal-staff"></div>
-                                                <div class="chart-card card-ogd">
-                                                    <i class="fa-solid fa-user-tie card-icon purple-text"></i>
-                                                    <div class="card-title">Oficial de Gobierno</div>
-                                                    <div style="font-size:0.5rem; color:#94a3b8; font-weight: normal; line-height: 1.1;">Articulador (OGD)</div>
-                                                </div>
-                                            </div>
-                                            
-                                            <!-- Vertical connector below staff -->
-                                            <div class="chart-line-vertical" style="height: 10px; margin-top: -4px;"></div>
-                                            
-                                            <!-- Horizontal split line and vertical drops -->
-                                            <div class="chart-line-split-container"></div>
-                                            
-                                            <!-- Columns below the split -->
-                                            <div class="chart-columns">
-                                                <!-- Left Column: Business & Strategy -->
-                                                <div class="chart-column">
-                                                    <div class="chart-card" style="border-left: 3px solid #818cf8; margin-bottom: 0.2rem;">
-                                                        <i class="fa-solid fa-diagram-project card-icon" style="color:#818cf8;"></i>
-                                                        <div class="card-title">Líder del Dato (Head)</div>
-                                                        <div style="font-size:0.5rem; color:#94a3b8; font-weight: normal; line-height: 1.1;">Estratega de Dominio</div>
-                                                    </div>
-                                                    <div class="chart-line-arrow">
-                                                        <i class="fa-solid fa-chevron-down"></i>
-                                                    </div>
-                                                    <div class="chart-card card-owner" style="margin-bottom: 0.2rem;">
-                                                        <i class="fa-solid fa-user-shield card-icon" style="color:#fb923c;"></i>
-                                                        <div class="card-title">Dueño de Datos (Owner)</div>
-                                                        <div style="font-size:0.5rem; color:#94a3b8; font-weight: normal; line-height: 1.1;">Resp. Funcional</div>
-                                                    </div>
-                                                    <div class="chart-line-arrow">
-                                                        <i class="fa-solid fa-chevron-down"></i>
-                                                    </div>
-                                                    <div class="chart-card card-steward">
-                                                        <i class="fa-solid fa-clipboard-check card-icon" style="color:#f59e0b;"></i>
-                                                        <div class="card-title">Gestor de Datos (Steward)</div>
-                                                        <div style="font-size:0.5rem; color:#94a3b8; font-weight: normal; line-height: 1.1;">Gestor Operativo</div>
-                                                    </div>
-                                                </div>
-                                                
-                                                <!-- Right Column: Technical & Value -->
-                                                <div class="chart-column">
-                                                    <div class="chart-card" style="border-left: 3px solid #3b82f6; margin-bottom: 0.2rem;">
-                                                        <i class="fa-solid fa-database card-icon" style="color:#3b82f6;"></i>
-                                                        <div class="card-title">Custodio Técnico</div>
-                                                        <div style="font-size:0.5rem; color:#94a3b8; font-weight: normal; line-height: 1.1;">Brazo Tecnológico</div>
-                                                    </div>
-                                                    <div class="chart-line-arrow">
-                                                        <i class="fa-solid fa-chevron-down"></i>
-                                                    </div>
-                                                    <div class="chart-card" style="border-left: 3px solid #34d399; margin-bottom: 0.2rem;">
-                                                        <i class="fa-solid fa-chart-column card-icon" style="color:#34d399;"></i>
-                                                        <div class="card-title">Equipo BI / Analítica</div>
-                                                        <div style="font-size:0.5rem; color:#94a3b8; font-weight: normal; line-height: 1.1;">Creador de Valor</div>
-                                                    </div>
-                                                    <div class="chart-line-arrow">
-                                                        <i class="fa-solid fa-chevron-down"></i>
-                                                    </div>
-                                                    <div class="chart-card" style="border-left: 3px solid #10b981;">
-                                                        <i class="fa-solid fa-circle-user card-icon" style="color:#10b981;"></i>
-                                                        <div class="card-title">Usuario de Datos (User)</div>
-                                                        <div style="font-size:0.5rem; color:#94a3b8; font-weight: normal; line-height: 1.1;">Consumidor</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Tab Content 2: Reference Image is removed -->
-                                </div>
-                                
-                                <!-- Right Column: Information & Description -->
-                                <div style="flex: 0.75; display: flex; flex-direction: column; justify-content: space-between; padding: 0.2rem 0; box-sizing: border-box;">
-                                    <div>
-                                        <h4 style="font-size:0.85rem;color:#10b981;font-weight:700;margin:0 0 0.3rem 0;">Ecosistema Humano de Gobierno de Datos</h4>
-                                        <p style="font-size:0.62rem;line-height:1.3;color:rgba(255,255,255,0.85);margin:0;text-align:justify;">
-                                            El OGD actúa como el director de orquesta que coordina transversalmente a la <strong>Alta Dirección</strong> (estratégico), los <strong>Líderes de Datos</strong>, los <strong>Dueños de Datos</strong> y <strong>Gestores (stewards)</strong> en el negocio, con el brazo técnico y analítico (<strong>Custodios</strong>, <strong>BI/Analítica</strong> y <strong>Usuarios</strong>), asegurando la alineación operativa en Osinergmin.
-                                        </p>
-                                    </div>
-                                    
-                                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; padding: 0.35rem; margin-top: 0.4rem; box-sizing: border-box;">
-                                        <div style="font-size: 0.58rem; font-weight: bold; color: #38bdf8; margin-bottom: 0.1rem; text-transform: uppercase;">Alineación de Niveles:</div>
-                                        <div style="font-size: 0.52rem; color: rgba(255,255,255,0.7); line-height: 1.25;">
-                                            • <strong>Estratégico:</strong> Alta Dirección, OGD, Líderes.<br>
-                                            • <strong>Táctico/Funcional:</strong> Dueños (Owners) y Gestores.<br>
-                                            • <strong>Técnico/Consumo:</strong> Custodio, Analítica y Usuarios.
-                                        </div>
-                                    </div>
-                                </div>
+                        <div style="display:flex; flex-direction:column; gap:0.6rem; width:100%; max-width:44rem;">
+                            <div style="background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.3); border-radius:8px; padding:0.5rem 0.8rem; text-align:center;">
+                                <strong style="color:#fbbf24; font-size:0.8rem;">Coordinación y seguimiento</strong>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(245,158,11,0.3); border-radius:8px; padding:0.8rem; text-align:left;">
+                                <ul style="font-size:0.68rem; color:rgba(255,255,255,0.85); line-height:1.5; padding-left:1.2rem; margin:0;">
+                                    <li>Documenta definiciones y metadatos.</li>
+                                    <li>Coordina reglas, incidencias y acuerdos.</li>
+                                    <li>Mantiene evidencias y registros.</li>
+                                    <li>Da seguimiento a las acciones.</li>
+                                    <li>Escala cuando no existe acuerdo.</li>
+                                </ul>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.4rem 0.8rem; font-size:0.62rem; color:rgba(255,255,255,0.7); text-align:center;">
+                                No reemplaza al Dueño ni al Custodio Técnico.
                             </div>
                         </div>
                     `,
-                    script: "En pantalla observamos el nuevo Organigrama de 8 Roles. El OGD coordina transversalmente desde el centro, comunicando la Alta Dirección y los Líderes del Dominio con los roles funcionales (Dueños y Gestores) y el brazo técnico/analítico (Custodio, BI y Usuarios de Datos)."
+                    script: "El Gestor del Dato convierte las decisiones funcionales en acuerdos documentados y coordinados. Mantiene definiciones, metadatos y evidencias; da seguimiento a incidencias y facilita la comunicación entre el Dueño, los usuarios y los equipos técnicos. Cuando un problema supera su ámbito o afecta a varias áreas, debe escalarlo por el canal correspondiente."
                 },
                 {
                     type: "content",
-                    title: "Eligiendo nuestro Modelo Operativo",
+                    title: "Custodio Técnico del Dato",
                     contentHtml: `
-                        <div style="display:flex;flex-direction:column;gap:0.5rem;width:100%;color:white;font-size:0.75rem;">
-                            <div style="display:flex;gap:0.4rem;align-items:stretch;">
-                                <div style="flex:1;background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.25);border-radius:8px;padding:0.5rem 0.4rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.3rem;">
-                                    <i class="fa-solid fa-building-columns" style="font-size:1.3rem;color:#60a5fa;"></i>
-                                    <div style="font-weight:700;color:#60a5fa;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;">Centralizado</div>
-                                    <div style="font-size:0.55rem;color:rgba(255,255,255,0.75);line-height:1.35;">Una sola oficina dicta todas las directrices. Excelente para iniciar con baja madurez, pero genera cuellos de botella al escalar.</div>
-                                    <div style="margin-top:auto;font-size:0.5rem;color:rgba(239,68,68,0.6);font-weight:600;">⚠️ Cuello de botella</div>
-                                </div>
-                                <div style="flex:1;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.25);border-radius:8px;padding:0.5rem 0.4rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.3rem;">
-                                    <i class="fa-solid fa-sitemap" style="font-size:1.3rem;color:#fbbf24;"></i>
-                                    <div style="font-weight:700;color:#fbbf24;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;">Descentralizado</div>
-                                    <div style="font-size:0.55rem;color:rgba(255,255,255,0.75);line-height:1.35;">Cada gerencia actúa con autonomía total. Ofrece máxima agilidad local, pero dificulta la integración y crea silos.</div>
-                                    <div style="margin-top:auto;font-size:0.5rem;color:rgba(239,68,68,0.6);font-weight:600;">⚠️ Silos de información</div>
-                                </div>
-                                <div style="flex:1;background:rgba(16,185,129,0.06);border:2px solid #10b981;border-radius:8px;padding:0.5rem 0.4rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.3rem;">
-                                    <i class="fa-solid fa-scale-balanced" style="font-size:1.3rem;color:#34d399;"></i>
-                                    <div style="font-weight:700;color:#34d399;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;">Federado / Híbrido ⭐</div>
-                                    <div style="font-size:0.55rem;color:rgba(255,255,255,0.75);line-height:1.35;">El modelo ideal. La oficina central define lineamientos comunes, pero cada gerencia los implementa con agilidad y flexibilidad local.</div>
-                                    <div style="margin-top:auto;font-size:0.5rem;color:#34d399;font-weight:700;">✅ Modelo recomendado</div>
-                                </div>
+                        <div style="display:flex; flex-direction:column; gap:0.6rem; width:100%; max-width:44rem;">
+                            <div style="background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.3); border-radius:8px; padding:0.5rem 0.8rem; text-align:center;">
+                                <strong style="color:#60a5fa; font-size:0.8rem;">Protección y operación</strong>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(59,130,246,0.3); border-radius:8px; padding:0.8rem; text-align:left;">
+                                <ul style="font-size:0.68rem; color:rgba(255,255,255,0.85); line-height:1.5; padding-left:1.2rem; margin:0;">
+                                    <li>Gestiona accesos y condiciones de seguridad.</li>
+                                    <li>Asegura disponibilidad, respaldos y recuperación.</li>
+                                    <li>Mantiene registros y trazabilidad técnica.</li>
+                                    <li>Opera almacenamiento e integraciones.</li>
+                                    <li>Implementa controles técnicos aprobados.</li>
+                                </ul>
+                            </div>
+                            <div style="background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.25); border-radius:6px; padding:0.4rem 0.8rem; font-size:0.62rem; color:rgba(239,68,68,0.85); text-align:center;">
+                                No define unilateralmente las reglas de negocio.
                             </div>
                         </div>
                     `,
-                    script: "Al elegir un modelo operativo debemos balancear control central vs. autonomía local. El modelo federado o híbrido es el recomendado porque permite directrices unificadas desde la oficina de gobierno de datos, mientras cada gerencia mantiene la agilidad para implementar según su realidad."
-                },
-                {
-                    type: "dragdrop",
-                    title: "Ejercicio 1: De la Cocina a los Roles Reales",
-                    leftHeader: "La Responsabilidad en la 'Cocina de Datos'",
-                    rightHeader: "El Rol Correcto (Solución)",
-                    instruction: "Asocia cada responsabilidad específica de Osinergmin con su correspondiente rol técnico en el Gobierno de Datos, usando la analogía de la cocina como marco narrativo. (En móviles, puedes hacer clic en un elemento y luego en su destino).",
-                    items: [
-                        { id: "item1", text: "Es el líder del área que rinde cuentas legalmente por la existencia y seguridad de la información (ej. la base de datos de empresas supervisadas). Es el dueño de los insumos.", shortText: "Líder/Responsable Legal", match: "zone-owner" },
-                        { id: "item2", text: "Es quien define las reglas del negocio, traduce las normas legales a formatos técnicos y se asegura de que los datos tengan la calidad adecuada en el día a día. Organiza el estante.", shortText: "Define reglas y calidad", match: "zone-steward" },
-                        { id: "item3", text: "Es el administrador de TI o el ingeniero de infraestructura que se encarga del almacenamiento seguro, los respaldos (backups) y los accesos a los servidores. Transporta y almacena en frío.", shortText: "Servidores/Infraestructura TI", match: "zone-custodian" },
-                        { id: "item4", text: "Es el equipo técnico que transforma los datos crudos en tableros de control (Dashboards), reportes de analítica e indicadores para la toma de decisiones. Cocina el plato de alto valor.", shortText: "Desarrolla tableros/reportes", match: "zone-bi" },
-                        { id: "item5", text: "Son los fiscalizadores, analistas o usuarios finales que consultan los reportes listos para realizar sus tareas diarias y operativos en la institución. El comensal.", shortText: "Fiscalizadores/Usuarios", match: "zone-user" }
-                    ],
-                    zones: [
-                        { id: "zone-owner", title: "DUEÑO DE DATOS", desc: "Data Owner" },
-                        { id: "zone-steward", title: "GESTOR DE DATOS", desc: "Data Steward" },
-                        { id: "zone-custodian", title: "CUSTODIO TÉCNICO", desc: "Data Custodian" },
-                        { id: "zone-bi", title: "EQUIPO BI / ANALÍTICA", desc: "Creadores de Valor" },
-                        { id: "zone-user", title: "USUARIO DE DATOS", desc: "Data User" }
-                    ],
-                    feedbackSuccess: "¡Excelente! Has asociado correctamente cada responsabilidad con su rol técnico oficial en el Gobierno de Datos de Osinergmin.",
-                    feedbackError: "Ese rol no asume esta responsabilidad. ¡Inténtalo de nuevo!",
-                    script: "Completa el primer ejercicio interactivo asociando las responsabilidades de datos de Osinergmin con su rol de gobernanza real."
+                    script: "El Custodio Técnico asegura las condiciones tecnológicas para proteger, almacenar y disponer los datos. Implementa controles, accesos, respaldos, integraciones y registros técnicos de acuerdo con las reglas aprobadas. Puede proponer alternativas y alertar sobre riesgos, pero no debe definir por sí solo el significado del dato o una regla de negocio."
                 },
                 {
                     type: "fillin",
-                    title: "Ejercicio 2: Elige la Estructura y Formaliza",
-                    instruction: "Selecciona el término correcto del menú desplegable para completar las políticas de modelamiento operativo.",
-                    textTemplate: "Si nuestra entidad es poco madura en gestión de información, nos conviene iniciar con un modelo operativo {select1} donde la Oficina de Gobierno dicte las reglas. Sin embargo, a medida que crecemos, el modelo ideal es el {select2} porque equilibra la gobernanza corporativa con la agilidad local. Bajo un enfoque {select3}, ser un steward no es un cargo nuevo, sino una forma de {select4} las responsabilidades y rendición de cuentas que los colaboradores ya tienen en su día a día.",
+                    title: "Microejercicio",
+                    instruction: "Selecciona el rol adecuado para completar cada frase.",
+                    textTemplate: "1. Quien responde por qué significa un dato es el {select1}.<br>2. Quien documenta la definición y le da seguimiento es el {select2}.<br>3. Quien configura accesos y respaldos es el {select3}.",
                     selects: {
                         "select1": {
-                            options: ["Centralizado", "Descentralizado", "Federado"],
-                            correct: "Centralizado"
+                            options: ["Dueño del Dato", "Gestor del Dato", "Custodio Técnico"],
+                            correct: "Dueño del Dato"
                         },
                         "select2": {
-                            options: ["Centralizado", "Descentralizado", "Federado (Híbrido)"],
-                            correct: "Federado (Híbrido)"
+                            options: ["Gestor del Dato", "Dueño del Dato", "Custodio Técnico"],
+                            correct: "Gestor del Dato"
                         },
                         "select3": {
-                            options: ["Invasivo", "No Invasivo", "Burocrático"],
-                            correct: "No Invasivo"
-                        },
-                        "select4": {
-                            options: ["eliminar", "formalizar", "ignorar"],
-                            correct: "formalizar"
+                            options: ["Custodio Técnico", "Dueño del Dato", "Gestor del Dato"],
+                            correct: "Custodio Técnico"
                         }
                     },
-                    feedbackSuccess: "¡Excelente! Has completado el texto definiendo con precisión los modelos y el enfoque de gobernanza no invasiva.",
-                    script: "Completa el segundo ejercicio de rellenar espacios seleccionando las alternativas que completan la política corporativa."
+                    feedbackSuccess: "¡Excelente! Has identificado correctamente la responsabilidad de cada rol.",
+                    script: "Pongamos a prueba lo aprendido con este breve microejercicio. Lee cada afirmación e identifica a qué rol corresponde la responsabilidad descrita."
+                },
+                {
+                    type: "content",
+                    title: "Equipo BI, Analítica e IA",
+                    contentHtml: `
+                        <div style="display:flex; flex-direction:column; gap:0.6rem; width:100%; max-width:44rem;">
+                            <div style="background:rgba(52,211,153,0.1); border:1px solid rgba(52,211,153,0.3); border-radius:8px; padding:0.5rem 0.8rem; text-align:center;">
+                                <strong style="color:#34d399; font-size:0.8rem;">Transformación y generación de valor</strong>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(52,211,153,0.3); border-radius:8px; padding:0.8rem; text-align:left;">
+                                <ul style="font-size:0.68rem; color:rgba(255,255,255,0.85); line-height:1.5; padding-left:1.2rem; margin:0;">
+                                    <li>Integra y prepara datos.</li>
+                                    <li>Implementa reglas, métricas y controles técnicos.</li>
+                                    <li>Documenta transformaciones.</li>
+                                    <li>Construye reportes, tableros y modelos.</li>
+                                    <li>Monitorea el comportamiento de las soluciones.</li>
+                                </ul>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.4rem 0.8rem; font-size:0.62rem; color:rgba(255,255,255,0.7); text-align:center;">
+                                Trabaja con requerimientos y datos funcionalmente validados.
+                            </div>
+                        </div>
+                    `,
+                    script: "El equipo de BI, Analítica e IA utiliza datos para construir soluciones que apoyan decisiones y procesos; por ejemplo: reportes, tableros, indicadores y modelos. Para hacerlo necesita definiciones, reglas y fuentes validadas. También debe documentar las transformaciones y aplicar controles técnicos. Su función no es decidir qué significa el dato, sino convertir necesidades funcionales en soluciones trazables y útiles."
+                },
+                {
+                    type: "content",
+                    title: "Usuario o Solicitante de Datos",
+                    contentHtml: `
+                        <div style="display:flex; flex-direction:column; gap:0.6rem; width:100%; max-width:44rem;">
+                            <div style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); border-radius:8px; padding:0.5rem 0.8rem; text-align:center;">
+                                <strong style="color:#10b981; font-size:0.8rem;">Uso responsable</strong>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(16,185,129,0.3); border-radius:8px; padding:0.8rem; text-align:left;">
+                                <div style="font-size:0.7rem; color:rgba(255,255,255,0.9); margin-bottom:0.3rem;">Antes de utilizar un dato debe:</div>
+                                <ul style="font-size:0.68rem; color:rgba(255,255,255,0.85); line-height:1.5; padding-left:1.2rem; margin:0;">
+                                    <li>verificar la fuente y versión;</li>
+                                    <li>respetar la finalidad y restricciones;</li>
+                                    <li>registrar información correctamente;</li>
+                                    <li>reportar errores o inconsistencias;</li>
+                                    <li>evitar copias o modificaciones no controladas.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `,
+                    script: "El usuario también forma parte del Gobierno de Datos. Su responsabilidad comienza cuando registra información y continúa cuando consulta, modifica, solicita o comparte datos. Debe utilizar fuentes reconocidas, respetar las condiciones de uso y reportar problemas. Corregir una copia sin informar, cambiar una definición o compartir un archivo sin control puede generar nuevas inconsistencias. Ante una inconsistencia, el camino adecuado es reportarla al Gestor del Dato del área correspondiente."
+                },
+                {
+                    type: "content",
+                    title: "Oficial de Gobierno de Datos (OGD)",
+                    contentHtml: `
+                        <div style="display:flex; flex-direction:column; gap:0.6rem; width:100%; max-width:44rem;">
+                            <div style="background:rgba(192,132,252,0.1); border:1px solid rgba(192,132,252,0.3); border-radius:8px; padding:0.5rem 0.8rem; text-align:center;">
+                                <strong style="color:#c084fc; font-size:0.8rem;">Supervisión y articulación</strong>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(192,132,252,0.3); border-radius:8px; padding:0.8rem; text-align:left;">
+                                <ul style="font-size:0.68rem; color:rgba(255,255,255,0.85); line-height:1.5; padding-left:1.2rem; margin:0;">
+                                    <li>Revisa el cumplimiento de políticas, reglas y responsabilidades.</li>
+                                    <li>Promueve estándares y acciones de mejora.</li>
+                                    <li>Monitorea riesgos, brechas y avances.</li>
+                                    <li>Articula situaciones transversales y escalamiento.</li>
+                                    <li>Realiza evaluaciones y seguimiento.</li>
+                                </ul>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.4rem 0.8rem; font-size:0.62rem; color:rgba(255,255,255,0.7); text-align:center;">
+                                No es dueño de todos los datos ni los corrige operativamente. Los hallazgos los atiende el área responsable.
+                            </div>
+                        </div>
+                    `,
+                    script: "El OGD supervisa y articula la aplicación del marco de Gobierno de Datos. Revisa el cumplimiento de políticas, responsabilidades y controles; identifica brechas; promueve mejoras y facilita el escalamiento de asuntos transversales. No reemplaza al Dueño del Dato ni corrige directamente las bases o reportes. Las áreas responsables deben atender los hallazgos dentro de sus competencias."
+                },
+                {
+                    type: "content",
+                    title: "Coordinación entre roles",
+                    contentHtml: `
+                        <div style="display:flex; flex-direction:column; gap:0.6rem; width:100%; max-width:46rem;">
+                            <div style="font-size:0.68rem; color:#fbbf24; font-weight:600; text-align:center; background:rgba(245,158,11,0.1); border-radius:6px; padding:0.4rem;">
+                                Ejemplo: dos áreas cuentan distinto los "expedientes atendidos". Hay que acordar qué fecha manda y establecer una regla para el campo “Fecha de registro”.
+                            </div>
+                            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem; font-size:0.6rem;">
+                                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.4rem; text-align:center;">
+                                    <strong style="color:#34d399;">1. Usuario/Gestor</strong><br>Reporta la necesidad.
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.4rem; text-align:center;">
+                                    <strong style="color:#fb923c;">2. Dueño del Dato</strong><br>Valida la regla funcional.
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.4rem; text-align:center;">
+                                    <strong style="color:#fbbf24;">3. Gestor del Dato</strong><br>La documenta y coordina.
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.4rem; text-align:center;">
+                                    <strong style="color:#60a5fa;">4. Custodio / TI</strong><br>Implementa el control.
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.4rem; text-align:center;">
+                                    <strong style="color:#10b981;">5. Usuarios</strong><br>Aplican la regla.
+                                </div>
+                                <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.4rem; text-align:center;">
+                                    <strong style="color:#c084fc;">6. OGD</strong><br>Supervisa el cumplimiento.
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    script: "Una regla no debería definirse o implementarse de manera aislada. Primero alguien detecta que dos áreas cuentan distinto y se identifica la necesidad; luego el responsable funcional (Dueño del dato) valida qué debe cumplirse; el Gestor documenta y coordina; y el equipo técnico implementa el control. Finalmente, los usuarios aplican la regla y el OGD verifica que el marco y las responsabilidades se estén cumpliendo. Según el caso, pueden intervenir otros especialistas."
+                },
+                {
+                    type: "dragdrop",
+                    title: "Actividad: ¿Quién debe actuar?",
+                    instruction: "Relaciona cada situación con el rol principal correspondiente. (En móviles, puedes hacer clic en un elemento y luego en su destino).",
+                    items: [
+                        { id: "item1", text: "Definir el significado oficial de un dato.", shortText: "Definir significado oficial", match: "zone-owner" },
+                        { id: "item2", text: "Documentar y dar seguimiento a una incidencia.", shortText: "Documentar incidencia", match: "zone-steward" },
+                        { id: "item3", text: "Configurar accesos, respaldos y controles técnicos.", shortText: "Configurar accesos/respaldos", match: "zone-custodian" },
+                        { id: "item4", text: "Construir un tablero con datos validados.", shortText: "Construir tablero validad", match: "zone-bi" },
+                        { id: "item5", text: "Reportar una fuente o versión incorrecta.", shortText: "Reportar fuente incorrecta", match: "zone-user" },
+                        { id: "item6", text: "Revisar el cumplimiento del marco.", shortText: "Revisar marco de Gobierno", match: "zone-ogd" }
+                    ],
+                    zones: [
+                        { id: "zone-owner", title: "DUEÑO DEL DATO", desc: "Responsabilidad funcional" },
+                        { id: "zone-steward", title: "GESTOR DEL DATO", desc: "Coordinación y seguimiento" },
+                        { id: "zone-custodian", title: "CUSTODIO TÉCNICO", desc: "Protección y operación" },
+                        { id: "zone-bi", title: "EQUIPO BI / IA", desc: "Transformación y valor" },
+                        { id: "zone-user", title: "USUARIO DE DATOS", desc: "Uso responsable" },
+                        { id: "zone-ogd", title: "OGD", desc: "Supervisión y articulación" }
+                    ],
+                    feedbackSuccess: "¡Excelente! Has emparejado correctamente cada situación con su rol principal.",
+                    script: "En esta actividad relaciona cada situación con el rol que tiene la responsabilidad principal. Esto no significa que trabaje solo. El Dueño valida el significado; el Gestor documenta y coordina; el Custodio gestiona las condiciones técnicas; el equipo analítico construye soluciones; el usuario reporta y utiliza responsablemente; y el OGD supervisa el cumplimiento."
                 },
                 {
                     type: "adventure",
-                    title: "Ejercicio 3: Caso Práctico - Resolviendo el Incendio",
-                    instruction: "Analiza el escenario operacional y decide a qué actor de gobernanza debes acudir para resolver el conflicto.",
-                    scenario: "Como Oficial de Gobierno de Datos, detectas que hay un grave error recurrente en los reportes de cobranzas de Osinergmin porque los usuarios ingresan las fechas en distintos formatos y con errores de tipeo. ¿A quién acudes primero para resolver la regla de negocio?",
+                    title: "Caso práctico",
+                    instruction: "Analiza la situación y selecciona la respuesta más adecuada.",
+                    scenario: "Cada mes se corrigen manualmente fechas registradas con formatos diferentes. ¿Qué respuesta es la más adecuada?",
                     options: [
                         {
-                            text: "Coordinar con la Jefatura de TI para que implemente restricciones técnicas obligatorias y máscaras de entrada en el formulario del sistema, bloqueando cualquier formato de fecha que no sea estandarizado.",
+                            text: "A. El equipo técnico decide un formato y lo cambia sin consultar.",
                             correct: false,
-                            feedback: "¡Cuidado! Aunque implementar una restricción técnica es necesario, la Jefatura de TI (Custodio Técnico) no debe definir la regla de negocio de manera aislada sin la participación del área dueña de los datos. Hacerlo podría generar fricción y parches técnicos sin alineación operativa."
+                            feedback: "Cambiar una regla de negocio sin consultar al área funcional puede afectar los procesos de la institución."
                         },
                         {
-                            text: "Convocar a la Gerencia de Cobranzas para establecer la regla de negocio del formato oficial de fecha requerido, validando el impacto que tendrá esta estandarización en sus operaciones diarias.",
+                            text: "B. El Dueño valida la regla; el Gestor la documenta; el equipo técnico implementa el control; los usuarios la aplican; y el OGD supervisa.",
                             correct: true,
-                            feedback: "¡Excelente! Bajo los principios de Gobierno de Datos, la Gerencia de Cobranzas (Dueño de Datos) es quien debe definir primero la regla de negocio y evaluar su impacto. Posteriormente, TI (Custodio Técnico) automatizará y habilitará el control en los sistemas."
+                            feedback: "¡Excelente! La respuesta sostenible requiere coordinación entre todos los roles implicados."
+                        },
+                        {
+                            text: "C. El OGD corrige directamente los datos cada mes.",
+                            correct: false,
+                            feedback: "El OGD no corrige datos operativamente; supervisa el cumplimiento del marco."
+                        },
+                        {
+                            text: "D. Cada área conserva su propio formato.",
+                            correct: false,
+                            feedback: "Conservar inconsistencias perpetúa los problemas de calidad y el retrabajo."
                         }
                     ],
-                    feedbackSuccess: "¡Perfecto! Has resuelto la discrepancia de roles coordinando entre el Dueño del Dato de negocio y el Custodio Técnico.",
-                    script: "Por último, lee la situación operacional y selecciona la alternativa de escalamiento y resolución de reglas de negocio adecuada."
+                    feedbackSuccess: "¡Perfecto! Has identificado la coordinación entre roles adecuada.",
+                    script: "Corregir el archivo todos los meses resuelve únicamente el resultado inmediato. La respuesta sostenible requiere coordinación: el Dueño valida la regla, el Gestor del Dato la documenta, el equipo técnico implementa la validación y los usuarios la aplican. El OGD no interviene en cada incidencia: revisa que el marco se esté cumpliendo. Así se atiende la causa y se evita que el mismo problema reaparezca."
                 },
                 {
                     type: "completion",
-                    title: "¡Felicitaciones!",
-                    subtitle: "Has completado la actividad 2.1",
-                    script: "¡Excelente! Has finalizado esta lección interactiva de Roles y Responsabilidades. Haz clic en el botón superior para regresar al panel."
+                    title: "Ideas clave",
+                    subtitle: "Has completado el Módulo 2",
+                    contentHtml: `
+                        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:0.5rem; width:100%; max-width:46rem;">
+                            <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.5rem; text-align:left;">
+                                <strong style="color:#fb923c; font-size:0.7rem;">1. Responsabilidad compartida</strong>
+                                <p style="font-size:0.58rem; color:rgba(255,255,255,0.75); margin:0.2rem 0 0 0;">Los datos no dependen de un solo equipo.</p>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.5rem; text-align:left;">
+                                <strong style="color:#fbbf24; font-size:0.7rem;">2. Dueño del Dato</strong>
+                                <p style="font-size:0.58rem; color:rgba(255,255,255,0.75); margin:0.2rem 0 0 0;">Define y valida las decisiones funcionales.</p>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.5rem; text-align:left;">
+                                <strong style="color:#60a5fa; font-size:0.7rem;">3. Gestor del Dato</strong>
+                                <p style="font-size:0.58rem; color:rgba(255,255,255,0.75); margin:0.2rem 0 0 0;">Coordina, documenta y da seguimiento.</p>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.5rem; text-align:left;">
+                                <strong style="color:#34d399; font-size:0.7rem;">4. Equipos técnicos</strong>
+                                <p style="font-size:0.58rem; color:rgba(255,255,255,0.75); margin:0.2rem 0 0 0;">Implementan y operan los controles.</p>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.5rem; text-align:left;">
+                                <strong style="color:#10b981; font-size:0.7rem;">5. Usuarios</strong>
+                                <p style="font-size:0.58rem; color:rgba(255,255,255,0.75); margin:0.2rem 0 0 0;">Registran, utilizan y reportan responsablemente.</p>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:6px; padding:0.5rem; text-align:left;">
+                                <strong style="color:#c084fc; font-size:0.7rem;">6. OGD</strong>
+                                <p style="font-size:0.58rem; color:rgba(255,255,255,0.75); margin:0.2rem 0 0 0;">Supervisa y articula el cumplimiento.</p>
+                            </div>
+                        </div>
+                    `,
+                    script: "En este módulo hemos visto que no existe un único responsable de todos los datos. Las áreas funcionales definen y validan; el Gestor coordina y documenta; los equipos técnicos implementan; los usuarios aplican las reglas y reportan problemas; y el OGD supervisa y articula el cumplimiento. Esta coordinación evita vacíos, decisiones unilaterales y retrabajo. En el siguiente módulo seguiremos el recorrido del dato desde su generación hasta su uso."
                 }
             ]
         },
@@ -2966,259 +2904,330 @@
             ]
         },
         "4": {
-            title: "4.1. Calidad y Estandarización",
-            subtitle: "Módulo 4: Gestión de la Calidad",
+            title: "4.1. Calidad, documentación y trazabilidad",
+            subtitle: "Módulo 4: Datos Confiables",
             salirHash: "#mod4_1",
             slides: [
                 {
                     type: "welcome",
                     title: "Gobierno de Datos",
-                    subtitle: "Gestión de la Calidad (Data Quality)",
+                    subtitle: "Módulo 4: Datos Confiables (Calidad, Documentación y Trazabilidad)",
                     buttonText: "COMPLETO<br><span style='font-size:0.75rem;font-weight:normal;'>haz clic para iniciar</span>",
-                    script: "Bienvenido al Módulo 4. Haz clic en el botón circular en el centro para iniciar la lección sobre Gestión de la Calidad y Estandarización."
+                    script: "Bienvenido al cuarto módulo. Ya sabemos que un dato es útil cuando resulta adecuado para el propósito con el que será utilizado. Para confiar en él necesitamos revisar su calidad, comprender qué significa y poder seguir su recorrido desde el origen hasta su uso. En este módulo veremos criterios básicos para reconocer problemas y actuar correctamente cuando los detectamos."
                 },
                 {
                     type: "intro",
                     title: "Módulo 4",
-                    subtitle: "La Calidad Determina el Valor del Dato",
-                    desc: "Curso desarrollado por la Oficina de Gobierno de Datos para Osinergmin",
-                    script: "En este módulo estudiaremos las dimensiones de calidad de datos, el impacto del error en el ciudadano y la importancia de automatizar las validaciones."
+                    subtitle: "¿Cómo reconozco un dato confiable y qué debo hacer cuando encuentro un problema?",
+                    desc: "Al finalizar este módulo podrás: reconocer problemas frecuentes de calidad, comprender la importancia de documentar los datos, explicar qué aporta la trazabilidad y seleccionar una actuación adecuada ante una incidencia.",
+                    script: "Esta pregunta orientará el módulo. No se busca formar especialistas en calidad de datos ni enseñar herramientas técnicas. La meta es que cualquier colaborador pueda reconocer señales de alerta, evitar correcciones informales y saber qué información debe verificar o comunicar para que el problema sea atendido."
                 },
                 {
                     type: "content",
-                    title: "La Calidad y el Impacto en el Ciudadano",
+                    title: "¿Cuándo podemos confiar en un dato?",
                     contentHtml: `
-                        <div class="content-split" style="gap:0.5rem;">
-                            <div class="content-split-left" style="background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0.35rem;">
-                                <i class="fa-solid fa-water" style="font-size:2.5rem;color:#60a5fa;"></i>
-                                <div style="font-weight:bold;color:#60a5fa;font-size:0.85rem;text-transform:uppercase;">Analogía: Planta de Tratamiento</div>
-                                <div style="font-size:0.65rem;color:rgba(255,255,255,0.75);line-height:1.4;max-width:90%;">
-                                    Tú no beberías agua directamente de un río turbio ni se la darías a tu familia. Necesitas una planta de tratamiento (el Programa Institucional de Calidad) para filtrarla. Los datos son iguales: requieren filtros antes de ser consumidos por la Alta Dirección o los ciudadanos.
-                                </div>
-                                <div style="display:flex;gap:0.3rem;font-size:0.55rem;flex-wrap:wrap;justify-content:center;">
-                                    <span style="background:rgba(96,165,250,0.15);padding:0.15rem 0.4rem;border-radius:4px;">🌊 Río turbio</span>
-                                    <span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">→</span>
-                                    <span style="background:rgba(16,185,129,0.15);padding:0.15rem 0.4rem;border-radius:4px;">🧪 Planta (PI-59)</span>
-                                    <span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">→</span>
-                                    <span style="background:rgba(251,191,36,0.15);padding:0.15rem 0.4rem;border-radius:4px;">🚰 Agua potable</span>
-                                </div>
+                        <div style="display:flex;flex-direction:column;align-items:center;gap:0.8rem;width:100%;color:white;font-size:0.8rem;">
+                            <div style="background:rgba(59,130,246,0.12);border:1px solid #3b82f6;border-radius:10px;padding:0.7rem 1.2rem;text-align:center;max-width:90%;">
+                                <div style="font-size:1.1rem;font-weight:bold;color:#60a5fa;margin-bottom:0.2rem;">💎 Dato Confiable</div>
+                                <div style="font-size:0.75rem;color:rgba(255,255,255,0.85);font-style:italic;">"La calidad no significa perfección absoluta, sino adecuación para el uso previsto."</div>
                             </div>
-                            <div class="content-split-right" style="display:flex;flex-direction:column;gap:0.4rem;">
-                                <div class="list-card" style="padding:0.5rem 0.7rem;">
-                                    <i class="fa-solid fa-file-shield" style="color:#38bdf8;"></i>
-                                    <div>
-                                        <div class="list-card-title" style="font-size:0.75rem;">Programa Institucional de Calidad (PI-59)</div>
-                                        <div style="color:rgba(255,255,255,0.7);font-size:0.68rem;">Alineado a ISO/IEC 25000 y al Eje 2 de la Estrategia Nacional de Gobierno de Datos 2026-2030. Nuestro procedimiento que asegura la calidad desde el origen.</div>
-                                    </div>
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));gap:0.5rem;width:100%;">
+                                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.5rem;text-align:center;">
+                                    <div style="color:#38bdf8;font-weight:bold;font-size:0.75rem;margin-bottom:0.2rem;">🎯 ¿Para qué se usará?</div>
+                                    <div style="font-size:0.65rem;color:rgba(255,255,255,0.7);">Responde a una necesidad concreta.</div>
                                 </div>
-                                <div class="list-card" style="padding:0.5rem 0.7rem;">
-                                    <i class="fa-solid fa-user-xmark" style="color:#ef4444;"></i>
-                                    <div>
-                                        <div class="list-card-title" style="font-size:0.75rem;">Impacto en el Ciudadano</div>
-                                        <div style="color:rgba(255,255,255,0.7);font-size:0.68rem;">Coordenadas erróneas envían inspectores a lugares equivocados; un nombre mal escrito en un padrón bloquea el cobro de un bono. La mala calidad no es un problema informático, es un problema de servicio público.</div>
-                                    </div>
+                                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.5rem;text-align:center;">
+                                    <div style="color:#34d399;font-weight:bold;font-size:0.75rem;margin-bottom:0.2rem;">📖 ¿Qué significa?</div>
+                                    <div style="font-size:0.65rem;color:rgba(255,255,255,0.7);">Tiene un significado claro e inambiguo.</div>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.5rem;text-align:center;">
+                                    <div style="color:#fbbf24;font-weight:bold;font-size:0.75rem;margin-bottom:0.2rem;">📍 ¿De dónde viene?</div>
+                                    <div style="font-size:0.65rem;color:rgba(255,255,255,0.7);">Proviene de una fuente identificada.</div>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.5rem;text-align:center;">
+                                    <div style="color:#c084fc;font-weight:bold;font-size:0.75rem;margin-bottom:0.2rem;">✅ ¿Qué cumple?</div>
+                                    <div style="font-size:0.65rem;color:rgba(255,255,255,0.7);">Cumple criterios de calidad relevantes.</div>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:0.5rem;text-align:center;">
+                                    <div style="color:#f472b6;font-weight:bold;font-size:0.75rem;margin-bottom:0.2rem;">🔍 ¿Se puede verificar?</div>
+                                    <div style="font-size:0.65rem;color:rgba(255,255,255,0.7);">Puede explicarse y comprobarse fácilmente.</div>
                                 </div>
                             </div>
                         </div>
                     `,
-                    script: "Tener datos almacenados no sirve de nada si estos están contaminados. Por ello, el Eje 2 de la Estrategia Nacional de Gobierno de Datos 2026-2030 nos exige asegurar la calidad de la información desde su origen. En Osinergmin, alineamos nuestro esfuerzo a la norma internacional ISO/IEC 25000 y lo aterrizamos en nuestro propio Programa Institucional de Calidad de Datos a través del procedimiento PI-59. ¿Por qué somos tan estrictos con esto? Porque los errores de datos impactan directamente en el ciudadano. Imagina que enviamos inspectores a una planta basándonos en coordenadas erróneas, o que un ciudadano no puede cobrar un beneficio porque su nombre está mal escrito en nuestra base de datos. La mala calidad no es un problema informático; es un problema de servicio público."
+                    script: "La confianza depende del uso. Un dato puede servir para una consulta preliminar y no ser suficiente para una decisión crítica. Por eso, antes de utilizarlo debemos conocer su propósito, significado, fuente y condiciones. Usted ya hace parte de esto sin llamarlo así: cuando pregunta '¿de cuándo es este archivo?' está revisando calidad. La calidad no consiste en exigir que todos los datos sean perfectos, sino en asegurar que cumplan los requisitos necesarios para el uso previsto."
                 },
                 {
                     type: "content",
-                    title: "De la Corrección Manual a la Automatización Escalar",
+                    title: "Dimensiones Básicas de Calidad",
                     contentHtml: `
-                        <div style="display:flex;gap:1rem;width:100%;color:white;align-items:stretch;">
-                            <div style="flex:1;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:0.6rem;display:flex;flex-direction:column;gap:0.4rem;font-size:0.75rem;">
-                                <strong style="color:#38bdf8;text-transform:uppercase;font-size:0.7rem;">Controles Clave</strong>
-                                <div><strong>La Validez:</strong> Detectar errores operativos al introducir los datos manualmente.</div>
-                                <div><strong>La Consistencia:</strong> Asegurar que el dato coincida en todos los sistemas.</div>
-                                <div><strong>La Integridad:</strong> Monitorear posibles errores técnicos durante la transferencia.</div>
-                            </div>
-                            <div style="flex:1.2;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:0.6rem;display:flex;flex-direction:column;gap:0.4rem;font-size:0.75rem;">
-                                <strong style="color:#10b981;text-transform:uppercase;font-size:0.7rem;">Mejores Prácticas: Automatización</strong>
-                                <p style="margin:0;line-height:1.4;color:rgba(255,255,255,0.85);">Corregir errores a mano en archivos Excel no es escalable a largo plazo.</p>
-                                <p style="margin:0;line-height:1.4;color:rgba(255,255,255,0.85);font-weight:bold;">Debemos parametrizar reglas, definir métricas, generar reportes de excepciones y usar perfilamiento automatizado proactivo en lugar de parches manuales.</p>
-                            </div>
-                        </div>
-                    `,
-                    script: "Históricamente, las entidades corrigen errores a mano en Excel de forma reactiva. Los expertos en gobernanza de datos señalan que esto es insostenible. Se deben definir reglas de calidad y perfilamientos automatizados que descubran anomalías en origen."
-                },
-                {
-                    type: "content",
-                    title: "¿Conducirías a ciegas? El Impacto de la Mala Calidad",
-                    contentHtml: `
-                        <div class="slide-visual-mockup" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.2rem;">
-                            <div class="slide-image-frame" style="width: 100%; max-width: 30rem; height: 16rem; margin-bottom: 0.6rem;">
-                                <img src="imagenes/modulo-04/coche-calidad.png" alt="¿Conducirías a ciegas?">
-                            </div>
-                            <h4 style="font-size:1.15rem;color:#f59e0b;font-weight:700;margin-bottom:0.4rem;text-transform:uppercase;letter-spacing:1px;">¿Conducirías a ciegas? El Impacto de la Mala Calidad</h4>
-                            <p style="font-size:0.82rem;line-height:1.5;color:rgba(255,255,255,0.95);margin:0;max-width:90%;text-align:justify;">
-                                Así como al buscar un coche nuevo el requisito mínimo es la alta calidad y fiabilidad, al utilizar datos para Osinergmin debemos exigir garantías. Tomar decisiones con datos sin evaluar es como conducir un coche averiado. Un error de tipeo no es solo un problema técnico; es un trámite rechazado, una subvención no cobrada y una insatisfacción directa del ciudadano.
-                            </p>
-                        </div>
-                    `,
-                    script: "Para comprender el impacto de la mala calidad, comparemos la toma de decisiones con datos no verificados con la conducción de un auto averiado. En el sector público, la mala calidad de los datos se traduce directamente en perjuicios directos para el ciudadano."
-                },
-                {
-                    type: "content",
-                    title: "El Tablero de la Calidad (Dimensiones)",
-                    contentHtml: `
-                        <style>
-                        @keyframes dimPulse { 0%,100% { border-color:#3b82f6; } 50% { border-color:#10b981; } }
-                        .dim-caso-selected { border-color:#60a5fa !important; background:rgba(96,165,250,0.12) !important; box-shadow:0 0 10px rgba(96,165,250,0.3); }
-                        </style>
                         <div style="display:flex;flex-direction:column;gap:0.5rem;width:100%;color:white;font-size:0.75rem;">
-                            <!-- 6 Dimension cards grid -->
-                            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.3rem;">
-                                <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:6px;padding:0.3rem 0.4rem;text-align:left;">
-                                    <div style="font-weight:700;color:#818cf8;font-size:0.6rem;text-transform:uppercase;margin-bottom:0.15rem;">🔍 Exactitud</div>
-                                    <div style="font-size:0.55rem;color:rgba(255,255,255,0.7);">¿El dato refleja la realidad?<br><span style="color:rgba(255,255,255,0.35);font-style:italic;">Ej: Coordenadas de estación apuntan al mar en vez de su ubicación real.</span></div>
+                            <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:0.4rem;">
+                                <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.3);border-radius:6px;padding:0.5rem;">
+                                    <div style="font-weight:700;color:#818cf8;font-size:0.75rem;margin-bottom:0.2rem;">🎯 Exactitud</div>
+                                    <div style="font-size:0.65rem;color:rgba(255,255,255,0.85);">¿Refleja correctamente la realidad?</div>
                                 </div>
-                                <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:6px;padding:0.3rem 0.4rem;text-align:left;">
-                                    <div style="font-weight:700;color:#34d399;font-size:0.6rem;text-transform:uppercase;margin-bottom:0.15rem;">📋 Completitud</div>
-                                    <div style="font-size:0.55rem;color:rgba(255,255,255,0.7);">¿Falta algún campo obligatorio?<br><span style="color:rgba(255,255,255,0.35);font-style:italic;">Ej: Expediente de reclamo sin número de teléfono de contacto.</span></div>
+                                <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.3);border-radius:6px;padding:0.5rem;">
+                                    <div style="font-weight:700;color:#34d399;font-size:0.75rem;margin-bottom:0.2rem;">📋 Completitud</div>
+                                    <div style="font-size:0.65rem;color:rgba(255,255,255,0.85);">¿Contiene los datos requeridos?</div>
                                 </div>
-                                <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:6px;padding:0.3rem 0.4rem;text-align:left;">
-                                    <div style="font-weight:700;color:#fbbf24;font-size:0.6rem;text-transform:uppercase;margin-bottom:0.15rem;">🔗 Consistencia</div>
-                                    <div style="font-size:0.55rem;color:rgba(255,255,255,0.7);">¿El dato coincide en todos los sistemas?<br><span style="color:rgba(255,255,255,0.35);font-style:italic;">Ej: Operador "Habilitado" en Fiscalización pero "Inactivo" en Administración.</span></div>
+                                <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:6px;padding:0.5rem;">
+                                    <div style="font-weight:700;color:#fbbf24;font-size:0.75rem;margin-bottom:0.2rem;">🔗 Consistencia</div>
+                                    <div style="font-size:0.65rem;color:rgba(255,255,255,0.85);">¿Mantiene coherencia con otros datos?</div>
                                 </div>
-                                <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:6px;padding:0.3rem 0.4rem;text-align:left;">
-                                    <div style="font-weight:700;color:#f87171;font-size:0.6rem;text-transform:uppercase;margin-bottom:0.15rem;">⏱️ Oportunidad</div>
-                                    <div style="font-size:0.55rem;color:rgba(255,255,255,0.7);">¿El dato está disponible a tiempo para decidir?<br><span style="color:rgba(255,255,255,0.35);font-style:italic;">Ej: Precio de combustibles de hace 3 años para un análisis actual.</span></div>
+                                <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:6px;padding:0.5rem;">
+                                    <div style="font-weight:700;color:#f87171;font-size:0.75rem;margin-bottom:0.2rem;">⏱️ Oportunidad</div>
+                                    <div style="font-size:0.65rem;color:rgba(255,255,255,0.85);">¿Está disponible y actualizado a tiempo?</div>
                                 </div>
-                                <div style="background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.2);border-radius:6px;padding:0.3rem 0.4rem;text-align:left;">
-                                    <div style="font-weight:700;color:#a78bfa;font-size:0.6rem;text-transform:uppercase;margin-bottom:0.15rem;">✅ Validez</div>
-                                    <div style="font-size:0.55rem;color:rgba(255,255,255,0.7);">¿El formato y tipo son correctos?<br><span style="color:rgba(255,255,255,0.35);font-style:italic;">Ej: RUC registrado con solo 5 dígitos en vez de 11.</span></div>
+                                <div style="background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.3);border-radius:6px;padding:0.5rem;">
+                                    <div style="font-weight:700;color:#a78bfa;font-size:0.75rem;margin-bottom:0.2rem;">✅ Validez</div>
+                                    <div style="font-size:0.65rem;color:rgba(255,255,255,0.85);">¿Cumple formatos, rangos y reglas?</div>
                                 </div>
-                                <div style="background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.2);border-radius:6px;padding:0.3rem 0.4rem;text-align:left;">
-                                    <div style="font-weight:700;color:#f472b6;font-size:0.6rem;text-transform:uppercase;margin-bottom:0.15rem;">👥 Unicidad</div>
-                                    <div style="font-size:0.55rem;color:rgba(255,255,255,0.7);">¿Hay registros duplicados?<br><span style="color:rgba(255,255,255,0.35);font-style:italic;">Ej: Una misma estación de servicio aparece 2 veces con IDs distintos.</span></div>
+                                <div style="background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.3);border-radius:6px;padding:0.5rem;">
+                                    <div style="font-weight:700;color:#f472b6;font-size:0.75rem;margin-bottom:0.2rem;">👥 Unicidad</div>
+                                    <div style="font-size:0.65rem;color:rgba(255,255,255,0.85);">¿Evita duplicados no justificados?</div>
                                 </div>
                             </div>
-                            <!-- Interactive: Diagnóstico de Dimensiones -->
-                            <div style="width:100%;background:rgba(15,23,42,0.5);border:2px dashed rgba(59,130,246,0.3);border-radius:8px;padding:0.5rem;text-align:center;margin-top:0.15rem;">
-                                <div style="font-size:0.6rem;color:#60a5fa;font-weight:700;text-transform:uppercase;margin-bottom:0.3rem;">🧪 Diagnóstico Rápido: ¿Qué dimensión falla?</div>
-                                <div style="display:flex;gap:0.4rem;justify-content:center;flex-wrap:wrap;margin-bottom:0.4rem;">
-                                    <div id="dim-caso-a" class="dim-caso" style="flex:1;min-width:7rem;max-width:8.5rem;padding:0.3rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.15);border-radius:6px;cursor:pointer;transition:all 0.3s;font-size:0.55rem;" onclick="window.seleccionarCaso('A')">
-                                        <div style="font-weight:700;color:#f8fafc;margin-bottom:0.2rem;font-size:0.6rem;">📄 Caso A</div>
-                                        <div style="color:rgba(255,255,255,0.7);font-size:0.5rem;line-height:1.3;">El formulario web de registro de estaciones permite guardar el campo "RUC" aunque tenga solo 5 dígitos.</div>
-                                    </div>
-                                    <div id="dim-caso-b" class="dim-caso" style="flex:1;min-width:7rem;max-width:8.5rem;padding:0.3rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.15);border-radius:6px;cursor:pointer;transition:all 0.3s;font-size:0.55rem;" onclick="window.seleccionarCaso('B')">
-                                        <div style="font-weight:700;color:#f8fafc;margin-bottom:0.2rem;font-size:0.6rem;">📄 Caso B</div>
-                                        <div style="color:rgba(255,255,255,0.7);font-size:0.5rem;line-height:1.3;">Un operador logístico figura como "Habilitado" en el sistema de Fiscalización pero como "Inactivo" en Administración.</div>
-                                    </div>
-                                    <div id="dim-caso-c" class="dim-caso" style="flex:1;min-width:7rem;max-width:8.5rem;padding:0.3rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.15);border-radius:6px;cursor:pointer;transition:all 0.3s;font-size:0.55rem;" onclick="window.seleccionarCaso('C')">
-                                        <div style="font-weight:700;color:#f8fafc;margin-bottom:0.2rem;font-size:0.6rem;">📄 Caso C</div>
-                                        <div style="color:rgba(255,255,255,0.7);font-size:0.5rem;line-height:1.3;">Las coordenadas GPS de una estación de servicio apuntan al océano Pacífico en vez de la Av. Principal registrada en el expediente.</div>
-                                    </div>
-                                </div>
-                                <div style="font-size:0.5rem;color:rgba(255,255,255,0.4);margin-bottom:0.25rem;">Haz clic en un caso y luego elige la dimensión que corresponde:</div>
-                                <div style="display:flex;gap:0.25rem;justify-content:center;flex-wrap:wrap;">
-                                    <button onclick="window.diagnosticarDimension('exactitud')" class="dim-btn" data-dim="exactitud" style="padding:0.25rem 0.5rem;background:rgba(99,102,241,0.1);border:1px solid #6366f1;border-radius:4px;color:#a5b4fc;font-size:0.5rem;font-weight:600;cursor:pointer;transition:all 0.3s;">Exactitud</button>
-                                    <button onclick="window.diagnosticarDimension('completitud')" class="dim-btn" data-dim="completitud" style="padding:0.25rem 0.5rem;background:rgba(16,185,129,0.1);border:1px solid #10b981;border-radius:4px;color:#6ee7b7;font-size:0.5rem;font-weight:600;cursor:pointer;transition:all 0.3s;">Completitud</button>
-                                    <button onclick="window.diagnosticarDimension('consistencia')" class="dim-btn" data-dim="consistencia" style="padding:0.25rem 0.5rem;background:rgba(245,158,11,0.1);border:1px solid #f59e0b;border-radius:4px;color:#fcd34d;font-size:0.5rem;font-weight:600;cursor:pointer;transition:all 0.3s;">Consistencia</button>
-                                    <button onclick="window.diagnosticarDimension('oportunidad')" class="dim-btn" data-dim="oportunidad" style="padding:0.25rem 0.5rem;background:rgba(239,68,68,0.1);border:1px solid #ef4444;border-radius:4px;color:#fca5a5;font-size:0.5rem;font-weight:600;cursor:pointer;transition:all 0.3s;">Oportunidad</button>
-                                    <button onclick="window.diagnosticarDimension('validez')" class="dim-btn" data-dim="validez" style="padding:0.25rem 0.5rem;background:rgba(168,85,247,0.1);border:1px solid #a855f7;border-radius:4px;color:#c084fc;font-size:0.5rem;font-weight:600;cursor:pointer;transition:all 0.3s;">Validez</button>
-                                    <button onclick="window.diagnosticarDimension('unicidad')" class="dim-btn" data-dim="unicidad" style="padding:0.25rem 0.5rem;background:rgba(236,72,153,0.1);border:1px solid #ec4899;border-radius:4px;color:#f9a8d4;font-size:0.5rem;font-weight:600;cursor:pointer;transition:all 0.3s;">Unicidad</button>
-                                </div>
-                                <div id="dim-diagnostic-feedback" style="margin-top:0.35rem;font-size:0.55rem;color:rgba(255,255,255,0.5);min-height:1.3rem;">
-                                    Selecciona un caso clicando en él y luego elige la dimensión.
-                                </div>
+                            <div style="text-align:center;font-size:0.7rem;color:rgba(255,255,255,0.5);margin-top:0.3rem;">
+                                💡 <em>No todas las dimensiones tienen la misma importancia en todos los casos.</em>
                             </div>
                         </div>
                     `,
-                    script: "Para medir la salud de nuestra información, el PI-59 establece dimensiones de calidad específicas que debemos evaluar en nuestro Tablero Institucional. Conozcamos las principales: Exactitud — el dato debe reflejar la realidad, como que una instalación activa figure como 'Activa' y no como 'Inactiva'. Completitud — no deben faltar datos obligatorios; un registro de contacto no sirve si el campo de teléfono está vacío. Consistencia — los datos no deben contradecirse entre sistemas; el sistema de multas no puede decir que una empresa debe 100 soles y el de cobranzas decir que debe 50. Oportunidad — el dato debe estar actualizado; un precio de combustible de hace tres años no nos sirve hoy. Validez — el dato debe cumplir los formatos acordados, como un RUC que obligatoriamente debe tener 11 dígitos. Unicidad — no deben existir registros duplicados sin control. Ahora practica con el diagnóstico interactivo de abajo: selecciona cada caso y elige la dimensión que corresponde."
+                    script: "Las dimensiones ayudan a precisar qué aspecto de la calidad está fallando. Un campo vacío afecta la completitud; una fecha con formato incorrecto, la validez; cifras distintas entre fuentes, la consistencia. La misma institución duplicada porque cada área escribió su nombre distinto afecta la unicidad. Y dos áreas que reportan cifras diferentes del mismo indicador afectan la consistencia. La importancia de cada dimensión depende del dato y del propósito para el que será utilizado."
                 },
                 {
                     type: "content",
-                    title: "Automatizar para Escalar (Mejora Continua)",
+                    title: "Microejercicio: Evaluando la Calidad en la Práctica",
                     contentHtml: `
-                        <div class="slide-visual-mockup" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.2rem;">
-                            <div class="slide-image-frame" style="width: 100%; max-width: 30rem; height: 16rem; margin-bottom: 0.6rem;">
-                                <img src="imagenes/modulo-04/automatizacion-calidad.png" alt="Automatizar para Escalar">
+                        <div style="display:flex;flex-direction:column;gap:0.5rem;width:100%;font-size:0.72rem;color:white;">
+                            <div style="background:rgba(255,255,255,0.04);border-left:3px solid #60a5fa;padding:0.5rem;border-radius:0 6px 6px 0;">
+                                <div style="font-weight:bold;color:#60a5fa;margin-bottom:0.2rem;">1. Oportunidad vs Propósito</div>
+                                <div>El padrón de establecimientos tiene corte de hace 6 meses. Para estimar el total regional <span style="color:#10b981;font-weight:bold;">alcanza</span>. Para notificar a uno en particular <span style="color:#ef4444;font-weight:bold;">no alcanza</span>.</div>
                             </div>
-                            <h4 style="font-size:1.15rem;color:#c084fc;font-weight:700;margin-bottom:0.4rem;text-transform:uppercase;letter-spacing:1px;">Automatizar para Escalar (Mejora Continua)</h4>
-                            <p style="font-size:0.82rem;line-height:1.5;color:rgba(255,255,255,0.95);margin:0;max-width:90%;text-align:justify;">
-                                No podemos depender de correcciones manuales eternas. Para que la calidad del dato crezca, debemos usar soluciones automatizadas que detecten valores nulos de forma proactiva, perfilen la base de datos y reporten excepciones atacando siempre la causa raíz del error.
-                            </p>
+                            <div style="background:rgba(255,255,255,0.04);border-left:3px solid #a855f7;padding:0.5rem;border-radius:0 6px 6px 0;">
+                                <div style="font-weight:bold;color:#c084fc;margin-bottom:0.2rem;">2. Validez de Regla</div>
+                                <div>Un grifo reporta octanaje 96. Llegó a tiempo, completo y sin duplicados, pero 96 no es un grado comercializado. Falla la dimensión de <span style="color:#a855f7;font-weight:bold;">Validez</span>.</div>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.04);border-left:3px solid #fbbf24;padding:0.5rem;border-radius:0 6px 6px 0;">
+                                <div style="font-weight:bold;color:#fbbf24;margin-bottom:0.2rem;">3. Consistencia de Definiciones</div>
+                                <div>Dos áreas reportan cifras distintas de supervisiones. Antes de asumir un error, hay que verificar si <span style="color:#fbbf24;font-weight:bold;">ambas están contando lo mismo</span>.</div>
+                            </div>
                         </div>
                     `,
-                    script: "Asimismo, observemos la diferencia entre parches manuales reactivos y la automatización inteligente. Para sostener el Gobierno de Datos, es vital usar herramientas automáticas que perfilen la base de datos y prevengan errores en la causa raíz."
+                    script: "Retroalimentaciones: 1) El mismo dato, dos veredictos. No es que el padrón esté malo: la oportunidad que exige una estimación no es la que exige una notificación. 2) Cinco dimensiones en verde y una en rojo bastan para que el dato no sirva. Validez es cumplir la regla. 3) Una inconsistencia no prueba que alguien se equivocó. Puede ser que nunca se acordó qué se estaba contando — y ahí no falla la exactitud de nadie: falta una definición."
+                },
+                {
+                    type: "content",
+                    title: "De la Necesidad al Control",
+                    contentHtml: `
+                        <div style="display:flex;flex-direction:column;gap:0.6rem;width:100%;color:white;font-size:0.75rem;">
+                            <div style="display:flex;justify-content:space-between;gap:0.3rem;align-items:center;">
+                                <div style="flex:1;background:rgba(59,130,246,0.1);border:1px solid #3b82f6;border-radius:6px;padding:0.4rem;text-align:center;">
+                                    <div style="font-weight:bold;color:#60a5fa;">1. Definir</div>
+                                    <div style="font-size:0.6rem;color:rgba(255,255,255,0.7);">Qué debe cumplir</div>
+                                </div>
+                                <div style="color:rgba(255,255,255,0.3);">→</div>
+                                <div style="flex:1;background:rgba(16,185,129,0.1);border:1px solid #10b981;border-radius:6px;padding:0.4rem;text-align:center;">
+                                    <div style="font-weight:bold;color:#34d399;">2. Verificar</div>
+                                    <div style="font-size:0.6rem;color:rgba(255,255,255,0.7);">Cómo se medirá</div>
+                                </div>
+                                <div style="color:rgba(255,255,255,0.3);">→</div>
+                                <div style="flex:1;background:rgba(245,158,11,0.1);border:1px solid #f59e0b;border-radius:6px;padding:0.4rem;text-align:center;">
+                                    <div style="font-weight:bold;color:#fbbf24;">3. Umbral</div>
+                                    <div style="font-size:0.6rem;color:rgba(255,255,255,0.7);">Qué es aceptable</div>
+                                </div>
+                                <div style="color:rgba(255,255,255,0.3);">→</div>
+                                <div style="flex:1;background:rgba(168,85,247,0.1);border:1px solid #a855f7;border-radius:6px;padding:0.4rem;text-align:center;">
+                                    <div style="font-weight:bold;color:#c084fc;">4. Control</div>
+                                    <div style="font-size:0.6rem;color:rgba(255,255,255,0.7);">Aplicar y registrar</div>
+                                </div>
+                                <div style="color:rgba(255,255,255,0.3);">→</div>
+                                <div style="flex:1;background:rgba(236,72,153,0.1);border:1px solid #ec4899;border-radius:6px;padding:0.4rem;text-align:center;">
+                                    <div style="font-weight:bold;color:#f472b6;">5. Mejorar</div>
+                                    <div style="font-size:0.6rem;color:rgba(255,255,255,0.7);">Seguimiento continuo</div>
+                                </div>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:0.4rem;text-align:center;font-size:0.65rem;color:rgba(255,255,255,0.6);">
+                                Secuencia institucional: <span style="color:#60a5fa;">Dimensión</span> → <span style="color:#34d399;">Regla</span> → <span style="color:#fbbf24;">Métrica</span> → <span style="color:#c084fc;">Umbral</span> → <span style="color:#f472b6;">Control</span> → <strong>Indicador</strong>
+                            </div>
+                        </div>
+                    `,
+                    script: "Un control de calidad debe responder a una necesidad real. Primero se define la regla funcional; luego se establece cómo medirla, qué nivel es aceptable y cómo verificarla. El seguimiento permite conocer si el problema mejora o se repite. La secuencia técnica se muestra solo como referencia; no es necesario memorizarla en este curso."
+                },
+                {
+                    type: "content",
+                    title: "La Calidad se Gestiona Durante Todo el Recorrido",
+                    contentHtml: `
+                        <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:0.5rem;width:100%;color:white;font-size:0.75rem;">
+                            <div style="background:rgba(16,185,129,0.08);border:1px solid #10b981;border-radius:8px;padding:0.6rem;">
+                                <div style="color:#34d399;font-weight:bold;font-size:0.8rem;margin-bottom:0.3rem;">🛡️ Controles Preventivos</div>
+                                <div style="font-size:0.65rem;color:rgba(255,255,255,0.8);line-height:1.4;">Evitan que el error ingrese desde la captura.<br><br><strong>Ejemplo:</strong> Campos obligatorios o listas desplegables.</div>
+                            </div>
+                            <div style="background:rgba(245,158,11,0.08);border:1px solid #f59e0b;border-radius:8px;padding:0.6rem;">
+                                <div style="color:#fbbf24;font-weight:bold;font-size:0.8rem;margin-bottom:0.3rem;">🔎 Controles Detectivos</div>
+                                <div style="font-size:0.65rem;color:rgba(255,255,255,0.8);line-height:1.4;">Identifican problemas existentes en las bases.<br><br><strong>Ejemplo:</strong> Alertas de duplicados o valores fuera de rango.</div>
+                            </div>
+                            <div style="background:rgba(59,130,246,0.08);border:1px solid #3b82f6;border-radius:8px;padding:0.6rem;">
+                                <div style="color:#60a5fa;font-weight:bold;font-size:0.8rem;margin-bottom:0.3rem;">🛠️ Acciones Correctivas</div>
+                                <div style="font-size:0.65rem;color:rgba(255,255,255,0.8);line-height:1.4;">Atienden el problema y su causa raíz.<br><br><strong>Ejemplo:</strong> Corregir registros y ajustar la regla o el proceso.</div>
+                            </div>
+                        </div>
+                    `,
+                    script: "La calidad no se revisa únicamente al elaborar un reporte. Puede prevenirse desde la captura, verificarse durante la integración y monitorearse durante el uso. Corregir un dato resuelve el caso inmediato; corregir la regla, el formulario o el proceso ayuda a evitar que el problema vuelva a ocurrir."
+                },
+                {
+                    type: "content",
+                    title: "Corregir el Resultado No Siempre Resuelve el Problema",
+                    contentHtml: `
+                        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;width:100%;color:white;font-size:0.75rem;">
+                            <div style="background:rgba(239,68,68,0.1);border:1px solid #ef4444;border-radius:8px;padding:0.5rem;width:90%;text-align:center;">
+                                <div style="color:#f87171;font-weight:bold;font-size:0.75rem;">⚠️ Síntoma Visible (Superficie)</div>
+                                <div style="font-size:0.65rem;color:rgba(255,255,255,0.8);">Cada mes se corrige manualmente el mismo campo en un archivo Excel para poder entregar a tiempo.</div>
+                            </div>
+                            <div style="color:rgba(255,255,255,0.3);font-size:0.9rem;">⬇️ Análisis de Causa Raíz (Bajo la superficie) ⬇️</div>
+                            <div style="background:rgba(59,130,246,0.08);border:1px solid #3b82f6;border-radius:8px;padding:0.5rem;width:90%;text-align:center;">
+                                <div style="color:#60a5fa;font-weight:bold;font-size:0.75rem;">🌱 Causa Profunda y Mejora Sostenible</div>
+                                <div style="font-size:0.65rem;color:rgba(255,255,255,0.8);">El formulario permite formatos distintos o no aplica validaciones. Solución: coordinar la regla funcional e implementar el control en el sistema.</div>
+                            </div>
+                        </div>
+                    `,
+                    script: "Las correcciones manuales pueden ser necesarias para cumplir una entrega, pero no deben convertirse en la solución permanente. El análisis de causa raíz busca entender por qué ocurre el problema. La respuesta puede requerir una regla más clara, una validación en el sistema, una mejora del proceso o una orientación al usuario."
+                },
+                {
+                    type: "content",
+                    title: "Documentar para Comprender y Reutilizar",
+                    contentHtml: `
+                        <div style="display:flex;gap:0.8rem;width:100%;color:white;font-size:0.75rem;">
+                            <div style="flex:1;background:rgba(245,158,11,0.08);border:1px solid #f59e0b;border-radius:8px;padding:0.6rem;">
+                                <div style="color:#fbbf24;font-weight:bold;font-size:0.8rem;margin-bottom:0.3rem;">📋 Ficha de Metadatos</div>
+                                <div style="display:flex;flex-direction:column;gap:0.25rem;font-size:0.65rem;">
+                                    <div><strong>📌 Definición:</strong> Qué significa exactamente el dato.</div>
+                                    <div><strong>📍 Fuente:</strong> De dónde proviene y sistema origen.</div>
+                                    <div><strong>👤 Responsable:</strong> Quién responde por la regla.</div>
+                                    <div><strong>⏱️ Actualización:</strong> Frecuencia con la que se renueva.</div>
+                                    <div><strong>🔒 Uso:</strong> Reglas o condiciones de acceso.</div>
+                                </div>
+                            </div>
+                            <div style="flex:1;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:0.6rem;display:flex;flex-direction:column;justify-content:center;">
+                                <div style="font-size:0.7rem;color:rgba(255,255,255,0.85);line-height:1.4;">
+                                    <em>"Piense en el archivo que hoy solo entiende quien lo armó. La celda amarilla significa algo que solo el autor recuerda. Ese archivo funciona... hasta que la persona sale de vacaciones."</em>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    script: "Piense en el archivo que hoy solo entiende quien lo armó. La columna se llama 'monto', pero no dice si es con IGV. La pestaña 'final' no dice de qué fecha. La celda amarilla significa algo que solo el autor recuerda. Ese archivo funciona hasta que la persona sale de vacaciones. Documentar evita que el conocimiento dependa únicamente de la memoria de una persona. Los metadatos permiten comprender el dato, localizar su fuente y conocer sus condiciones de uso. No todos los colaboradores deberán completar fichas técnicas, pero sí deben valorar la documentación y proporcionar información cuando les corresponda."
+                },
+                {
+                    type: "content",
+                    title: "Trazabilidad: Seguir la Historia del Dato",
+                    contentHtml: `
+                        <div style="display:flex;flex-direction:column;gap:0.6rem;width:100%;color:white;font-size:0.75rem;">
+                            <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(15,23,42,0.6);border:1px solid rgba(59,130,246,0.3);border-radius:8px;padding:0.6rem;">
+                                <div style="text-align:center;"><span style="color:#60a5fa;font-weight:bold;">1. Entrada</span></div>
+                                <div style="color:rgba(255,255,255,0.3);">→</div>
+                                <div style="text-align:center;"><span style="color:#34d399;font-weight:bold;">2. Ingesta</span></div>
+                                <div style="color:rgba(255,255,255,0.3);">→</div>
+                                <div style="text-align:center;"><span style="color:#fbbf24;font-weight:bold;">3. Transformación</span></div>
+                                <div style="color:rgba(255,255,255,0.3);">→</div>
+                                <div style="text-align:center;"><span style="color:#c084fc;font-weight:bold;">4. Producto Datos</span></div>
+                                <div style="color:rgba(255,255,255,0.3);">→</div>
+                                <div style="text-align:center;"><span style="color:#f472b6;font-weight:bold;">5. Reporte / IA</span></div>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.04);border-radius:6px;padding:0.5rem;font-size:0.65rem;color:rgba(255,255,255,0.85);text-align:center;">
+                                💡 <em>"Sin trazabilidad, una cifra que nadie puede explicar solo se puede volver a calcular — y sale un tercer número."</em>
+                            </div>
+                        </div>
+                    `,
+                    script: "La trazabilidad es la capacidad de seguir el recorrido del dato. Ante una diferencia en una solución, permite retroceder hasta el origen, revisar las transformaciones y confirmar la versión utilizada. Sin eso, la única salida es rehacer el cálculo, lo cual no explica la diferencia: agrega un número más a la discusión. Esto facilita auditorías, investigaciones de errores y el sustento de decisiones, ya que podemos responder y respaldar el dato con facilidad."
+                },
+                {
+                    type: "content",
+                    title: "¿Qué hago cuando encuentro un problema?",
+                    contentHtml: `
+                        <div style="display:flex;flex-direction:column;gap:0.4rem;width:100%;color:white;font-size:0.7rem;">
+                            <div style="background:rgba(239,68,68,0.08);border-left:3px solid #ef4444;padding:0.35rem 0.5rem;"><strong>1. No modificar informalmente:</strong> Evitar crear copias paralelas o parches sin registro.</div>
+                            <div style="background:rgba(245,158,11,0.08);border-left:3px solid #f59e0b;padding:0.35rem 0.5rem;"><strong>2. Verificar contexto:</strong> Revisar fuente, fecha y uso previsto.</div>
+                            <div style="background:rgba(59,130,246,0.08);border-left:3px solid #3b82f6;padding:0.35rem 0.5rem;"><strong>3. Registrar la incidencia:</strong> Comunicar el problema adjuntando evidencia clara.</div>
+                            <div style="background:rgba(168,85,247,0.08);border-left:3px solid #a855f7;padding:0.35rem 0.5rem;"><strong>4. Coordinar con el Gestor:</strong> Canalizar con el Gestor del Dato del área.</div>
+                            <div style="background:rgba(16,185,129,0.08);border-left:3px solid #10b981;padding:0.35rem 0.5rem;"><strong>5. Atender la causa:</strong> Resolver el caso y corregir el origen.</div>
+                            <div style="background:rgba(236,72,153,0.08);border-left:3px solid #ec4899;padding:0.35rem 0.5rem;"><strong>6. Confirmar y verificar:</strong> Documentar la solución para que quede trazable.</div>
+                        </div>
+                    `,
+                    script: "Cuando detectamos un problema, debemos evitar soluciones que oculten la incidencia, como crear una nueva copia o modificar el archivo sin registro. Es importante describir qué ocurrió, dónde se observó y qué impacto puede tener. El Gestor del Dato coordina la atención y el Dueño valida las reglas funcionales cuando corresponde."
+                },
+                {
+                    type: "content",
+                    title: "¿Qué Obtenemos con Calidad, Documentación y Trazabilidad?",
+                    contentHtml: `
+                        <div style="display:flex;gap:0.8rem;width:100%;color:white;font-size:0.75rem;">
+                            <div style="flex:1;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;padding:0.6rem;text-align:center;">
+                                <div style="color:#f87171;font-weight:bold;margin-bottom:0.3rem;">❌ Antes</div>
+                                <div style="font-size:0.65rem;color:rgba(255,255,255,0.7);">Buscar sin encontrar · Adivinar significados · Corregir manualmente cada mes</div>
+                            </div>
+                            <div style="flex:1;background:rgba(16,185,129,0.08);border:1px solid #10b981;border-radius:8px;padding:0.6rem;text-align:center;">
+                                <div style="color:#34d399;font-weight:bold;margin-bottom:0.3rem;">✅ Después</div>
+                                <div style="font-size:0.65rem;color:rgba(255,255,255,0.9);">Comprender el dato · Verificar su origen · Reutilizar con total confianza</div>
+                            </div>
+                        </div>
+                    `,
+                    script: "Estos elementos se complementan. La calidad indica si el dato cumple lo necesario; la documentación explica su significado y condiciones; la trazabilidad permite seguir su historia. Juntos reducen el retrabajo y facilitan que los datos se utilicen con mayor confianza."
                 },
                 {
                     type: "dragdrop",
-                    title: "Ejercicio 1: Los Medidores del Coche",
-                    instruction: "Arrastra la situación de negocio de la izquierda hacia la dimensión o tipo de falla de calidad que representa de la derecha. (En móviles, puedes hacer clic en un elemento y luego en su destino).",
+                    title: "Actividad: Identifica el Problema",
+                    instruction: "Relaciona cada situación con el concepto principal que ayuda a describirla.",
                     items: [
-                        { id: "item1", text: "El sistema de registro de estaciones de servicio acepta que el usuario guarde el campo de correo electrónico sin el símbolo @ y permite ingresar un RUC de solo 5 dígitos en lugar de 11.", match: "zone-validez" },
-                        { id: "item2", text: "Al contrastar el padrón de empresas autorizadas, la Gerencia de Fiscalización encuentra que un mismo operador aparece activo con el estado de \"Habilitado\", pero en el sistema de Administración figura como \"Inactivo\".", match: "zone-consistencia" },
-                        { id: "item3", text: "Al revisar el padrón de estaciones de servicio, el analista detecta que la 'Estación Los Olivos' aparece registrada 3 veces con códigos distintos y direcciones ligeramente diferentes.", match: "zone-unicidad" },
-                        { id: "item4", text: "El equipo de analítica necesita calcular el índice de variación del precio de los combustibles de esta semana para un reporte de la Alta Dirección, pero la última actualización de la base de datos es de hace tres meses.", match: "zone-oportunidad" },
-                        { id: "item5", text: "El equipo de catastro encuentra que las coordenadas GPS registradas para 15 estaciones de servicio apuntan al océano Pacífico, a 3 km de la ubicación real verificada en campo.", match: "zone-exactitud" },
-                        { id: "item6", text: "Al revisar la base de datos de reclamos, el analista descubre que el campo 'Dirección del Domicilio del Reclamante' está vacío en el 40% de los registros del último trimestre.", match: "zone-completitud" }
+                        { id: "item1", text: "Un campo obligatorio del formulario está completamente vacío.", match: "zone-completitud" },
+                        { id: "item2", text: "Dos sistemas institucionales muestran valores diferentes para el mismo registro.", match: "zone-consistencia" },
+                        { id: "item3", text: "No se conoce quién actualiza el dato ni con qué frecuencia.", match: "zone-documentacion" },
+                        { id: "item4", text: "No se puede explicar cómo una cifra llegó a figurar en el reporte final.", match: "zone-trazabilidad" },
+                        { id: "item5", text: "El archivo trae la cifra, pero no indica en qué unidad de medida está.", match: "zone-metadatos" }
                     ],
                     zones: [
-                        { id: "zone-validez", title: "Falla de Validez", desc: "" },
-                        { id: "zone-consistencia", title: "Falla de Consistencia", desc: "" },
-                        { id: "zone-unicidad", title: "Falla de Unicidad", desc: "" },
-                        { id: "zone-oportunidad", title: "Falla de Oportunidad", desc: "" },
-                        { id: "zone-exactitud", title: "Falla de Exactitud", desc: "" },
-                        { id: "zone-completitud", title: "Falla de Completitud", desc: "" }
+                        { id: "zone-completitud", title: "Completitud", desc: "" },
+                        { id: "zone-consistencia", title: "Consistencia", desc: "" },
+                        { id: "zone-documentacion", title: "Documentación", desc: "" },
+                        { id: "zone-trazabilidad", title: "Trazabilidad", desc: "" },
+                        { id: "zone-metadatos", title: "Metadatos", desc: "" }
                     ],
-                    feedbackSuccess: "¡Excelente! Has asociado correctamente cada escenario con la dimensión de calidad afectada.",
-                    script: "Resuelve el primer ejercicio clasificando las anomalías de calidad de la información según su dimensión técnica."
-                },
-                {
-                    type: "fillin",
-                    title: "Ejercicio 2: Escalando la Calidad",
-                    instruction: "Completa el párrafo seleccionando la opción adecuada en cada menú desplegable según el modelo de mejora continua.",
-                    textTemplate: "Según las mejores prácticas internacionales, para gestionar eficazmente la calidad de la información se debe priorizar la creación de reglas, métricas e informes de {select1}. Los estándares de gobernanza recomiendan utilizar soluciones {select2} (como perfiladores de datos), ya que depender de correcciones manuales en Excel impedirá, en última instancia, sostener y {select3} nuestro programa de Gobierno de Datos, condenándonos a parches reactivos en lugar de una mejora continua en la {select4}.",
-                    selects: {
-                        "select1": {
-                            options: ["excepciones", "usuarios", "servidores"],
-                            correct: "excepciones"
-                        },
-                        "select2": {
-                            options: ["manuales", "impresas", "automatizadas"],
-                            correct: "automatizadas"
-                        },
-                        "select3": {
-                            options: ["bloquear", "limitar", "escalar"],
-                            correct: "escalar"
-                        },
-                        "select4": {
-                            options: ["causa raíz", "interfaz de usuario", "velocidad de red"],
-                            correct: "causa raíz"
-                        }
-                    },
-                    feedbackSuccess: "¡Perfecto! Has completado el enunciado con los pilares del control automático y la erradicación del error en el origen.",
-                    script: "Completa el segundo párrafo seleccionando los conceptos de automatización de reglas e identificación de la causa raíz."
+                    feedbackSuccess: "¡Excelente! Has asociado correctamente cada situación con el concepto de calidad y gobernanza correspondiente.",
+                    script: "Relaciona cada situación con el concepto que ayuda a describirla. El objetivo no es memorizar términos, sino reconocer qué información falta para comprender y atender el problema."
                 },
                 {
                     type: "adventure",
-                    title: "Ejercicio 3: Caso Práctico - Cortando el Problema de Raíz",
-                    instruction: "Analiza la situación y selecciona la decisión táctica del Custodio de Datos para erradicar las fallas del dataset.",
-                    scenario: "Como Custodio de Datos de Recursos Humanos en Osinergmin, notas que el campo 'Fecha de Nacimiento' tiene miles de inconsistencias porque los usuarios lo llenan de forma manual usando distintos formatos (DD/MM/AA, MM-DD-AA, etc.), impidiendo realizar cálculos estadísticos automáticos.",
+                    title: "Caso Práctico: La Cifra que Nadie Puede Explicar",
+                    instruction: "Analiza el caso y selecciona la mejor actuación según los principios de trazabilidad.",
+                    scenario: "Un reporte entregado el mes pasado indica 1,240 supervisiones. El sistema hoy marca 1,193. La persona que elaboró el reporte ya no trabaja en la institución y el archivo no indica la versión de corte utilizada ni las transformaciones aplicadas. ¿Cuál es la mejor actuación?",
                     options: [
                         {
-                            text: "Asigno a un practicante para que todos los viernes abra el archivo maestro en Excel y corrija a mano el formato de las fechas una por una para que el reporte de fin de mes salga limpio.",
+                            text: "Usar automáticamente la cifra del sistema por ser la fuente oficial.",
                             correct: false,
-                            feedback: "¡Cuidado! Estás aplicando un parche reactivo al final del proceso. Esto consume valiosas horas-hombre, no soluciona el origen del problema y no evita que ingresen datos corruptos en el próximo registro."
+                            feedback: "Incorrecto: Elegir una cifra sin entender la diferencia no soluciona el problema y deja intacta la falta de trazabilidad."
                         },
                         {
-                            text: "Analizo la causa raíz y coordino con TI para parametrizar el formulario de ingreso del sistema web con un calendario desplegable obligatorio (regla de validez de formato), impidiendo que el error entre al sistema desde la ventanilla origen.",
+                            text: "Pedir que se rehaga el cálculo desde cero para comparar ambos resultados.",
+                            correct: false,
+                            feedback: "Incorrecto: Rehacer el cálculo sin investigar solo genera una tercera cifra en discusión sin explicar el origen de la discrepancia."
+                        },
+                        {
+                            text: "Corregir el reporte antiguo de forma silenciosa para igualarlo al sistema.",
+                            correct: false,
+                            feedback: "Incorrecto: Modificar registros históricos sin control oculta la incidencia y genera informalidad."
+                        },
+                        {
+                            text: "Seguir la cifra hasta su origen: rastrear la versión utilizada, la fecha de corte y las transformaciones aplicadas.",
                             correct: true,
-                            feedback: "¡Excelente! Has implementado un control de calidad preventivo en el origen. Aseguras la dimensión de Validez desde la captura y erradicas futuros reprocesos para toda la gerencia."
+                            feedback: "¡Excelente! La trazabilidad permite retroceder en el recorrido para identificar si la diferencia fue por fecha de corte, regla de negocio o versión. Si no se puede rastrear, el hallazgo exige dejar los futuros datos trazables."
                         }
                     ],
-                    feedbackSuccess: "¡Perfecto! Has resuelto la incidencia aplicando controles preventivos integrados en los formularios del sistema.",
-                    script: "Finalmente, lee la encrucijada de Recursos Humanos y decide si aplicar un parche manual reactivo o una validación preventiva en el origen."
+                    feedbackSuccess: "¡Perfecto! Has identificado la importancia de la trazabilidad para sustentar y explicar los datos institucionales.",
+                    script: "Dos cifras distintas no siempre significan que una esté mal: pueden venir de versiones distintas, de fechas de corte distintas o de una regla que cambió en el camino. Elegir la del sistema, o rehacer el cálculo, da una respuesta rápida y deja el problema intacto. Lo que permite salir de esto es la trazabilidad: seguir la cifra hacia el origen. Y si el recorrido no se puede seguir, ese ya es el hallazgo — el próximo dato hay que dejarlo trazable desde el origen."
                 },
                 {
                     type: "completion",
                     title: "¡Felicitaciones!",
-                    subtitle: "Has completado la actividad 4.1",
-                    script: "¡Excelente trabajo! Has terminado la lección interactiva de Calidad de Datos. Sal de la actividad para continuar con el programa."
+                    subtitle: "Has completado el Módulo 4: Datos Confiables",
+                    script: "En este módulo hemos aprendido que la confianza no depende de una única revisión final. Requiere criterios de calidad, documentación y trazabilidad. También vimos que cada colaborador puede ayudar a prevenir problemas, comunicar incidencias y evitar correcciones no controladas. En el siguiente módulo abordaremos las condiciones de seguridad, responsabilidad y ética que deben considerarse antes de consultar, modificar o compartir datos."
                 }
             ]
         },
@@ -4151,25 +4160,24 @@
             {
                 type: "content",
                 title: "Sin Gobierno de Datos y con Gobierno de Datos",
-                contentHtml: "<div class='m1-content-shell'><div class='m1-kicker'>Del problema recurrente a la coordinación institucional</div><div class='m1-compare-grid'><div class='m1-info-card' style='border-top:3px solid #f87171;'><h4><i class='fa-solid fa-triangle-exclamation m1-icon' style='color:#f87171;'></i>Sin Gobierno de Datos</h4><ul><li>Definiciones distintas para una misma pregunta.</li><li>Fuentes y versiones difíciles de reconocer.</li><li>Responsabilidades implícitas o dispersas.</li><li>Soluciones aisladas y reactivas.</li><li>Correcciones y retrabajos repetidos.</li></ul></div><div class='m1-info-card' style='border-top:3px solid #22c55e;'><h4><i class='fa-solid fa-circle-check m1-icon' style='color:#22c55e;'></i>Con Gobierno de Datos</h4><ul><li>Criterios acordados y conocidos por todos.</li><li>Fuentes, definiciones y versiones identificadas.</li><li>Responsabilidades claras para validar y decidir.</li><li>Prevención, seguimiento y mejora continua.</li><li>Datos reutilizables sin perder su significado.</li></ul></div></div><div class='m1-callout'>El cambio principal es pasar de soluciones aisladas y reactivas a criterios acordados, responsabilidades claras y mejora continua.</div></div>",
+                contentHtml: "<div class='m1-content-shell' style='display:flex; flex-direction:column; align-items:center; width:100%; max-width:64rem;'><div class='m1-kicker'>Del problema recurrente a la coordinación institucional</div><div style='display:flex; justify-content:center; align-items:center; width:100%; margin:0.4rem 0; flex:1; min-height:0;'><img src='imagenes/modulo-01/singobierno_congobierno.png' alt='Sin Gobierno de Datos vs con Gobierno de Datos' style='max-width:100%; max-height:calc(68vh - 120px); width:auto; height:auto; border-radius:12px; object-fit:contain; box-shadow:0 6px 24px rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.12);'></div><div class='m1-callout' style='width:100%; max-width:52rem; margin-top:0.3rem;'>El cambio principal es pasar de soluciones aisladas y reactivas a criterios acordados, responsabilidades claras y mejora continua.</div></div>",
                 script: 'El aporte del Gobierno de Datos es establecer una forma ordenada de prevenir, identificar y atender errores y diferencias. Cuando se reconocen las fuentes, las definiciones y las responsabilidades, disminuye la necesidad de reconstruir información o corregir repetidamente el resultado final. También se facilita que los datos puedan reutilizarse por diferentes áreas sin perder su significado. El cambio principal es pasar de soluciones aisladas y reactivas a criterios acordados y conocidos por todos, responsabilidades claras y mejora continua. A partir de esta comparación podemos formular una definición sencilla de Gobierno de Datos.'
             },
             {
                 type: "content",
                 title: "¿Qué es Gobierno de Datos?",
-                contentHtml: "<div class='m1-content-shell'><div class='m1-kicker'>Un marco organizacional</div><p class='m1-lead'>Es el marco que establece principios, responsabilidades, reglas, procesos y controles para que los datos sean confiables, seguros, comprensibles y útiles.</p><div class='m1-diagram'><div class='m1-diagram-item'>Principios</div><div class='m1-diagram-item'>Responsabilidades</div><div class='m1-diagram-item'>Reglas</div><div class='m1-diagram-item'>Procesos</div><div class='m1-diagram-item'>Controles</div><div class='m1-diagram-item'>Seguimiento</div><div class='m1-diagram-center'>Gobierno<br>de Datos</div></div><div class='m1-callout'>No es solamente una herramienta, un sistema, una actividad de limpieza ni una responsabilidad exclusiva de TI. Es una forma organizada de tomar decisiones y gestionar responsabilidades sobre los datos.</div></div>",
+                contentHtml: "<div class='m1-content-shell'><div class='m1-kicker'> </div><p class='m1-lead'>Es el marco que establece principios, responsabilidades, reglas, procesos y controles para que los datos sean confiables, seguros, comprensibles y útiles.</p><div class='m1-diagram'><div class='m1-diagram-item'>Principios</div><div class='m1-diagram-item'>Responsabilidades</div><div class='m1-diagram-item'>Reglas</div><div class='m1-diagram-item'>Procesos</div><div class='m1-diagram-item'>Controles</div><div class='m1-diagram-item'>Seguimiento</div><div class='m1-diagram-center'>Gobierno<br>de Datos</div></div><div class='m1-callout'>No es solamente una herramienta, un sistema, una actividad de limpieza ni una responsabilidad exclusiva de TI. Es una forma organizada de tomar decisiones y gestionar responsabilidades sobre los datos.</div></div>",
                 script: 'El Gobierno de Datos es un marco organizacional. Define cómo deben tomarse las decisiones relacionadas con los datos, quiénes participan, qué responsabilidades les corresponden y qué criterios deben cumplirse. Puede apoyarse en herramientas, sistemas y plataformas, pero no se reduce a ellos. Tampoco corresponde únicamente a GSTI o al equipo de analítica. En Osinergmin ya se toman esas decisiones todos los días: alguien define qué se registra, alguien decide quién accede y alguien valida una cifra antes de que salga. El Gobierno de Datos no crea esas decisiones; las ordena y las hace explícitas. Las áreas funcionales conocen el significado y uso de los datos, mientras que los equipos técnicos implementan y operan capacidades para gestionarlos. Por ello, el Gobierno de Datos requiere coordinación entre personas, procesos y tecnología. Para comprender mejor su alcance, debemos diferenciar el Gobierno de Datos de la Gestión de Datos.'
             },
             {
                 type: "content",
                 title: "Gobierno de Datos y Gestión de Datos",
-                contentHtml: "<div class='m1-content-shell'><div class='m1-kicker'>Son distintos, pero se necesitan mutuamente</div><div class='m1-compare-grid'><div class='m1-info-card' style='border-top:3px solid #38bdf8;'><h4><i class='fa-solid fa-compass m1-icon'></i>Gobierno de Datos</h4><p>Establece el rumbo y las condiciones.</p><ul><li>Responsabilidades.</li><li>Reglas y políticas.</li><li>Prioridades.</li><li>Criterios de decisión.</li><li>Mecanismos de supervisión.</li></ul></div><div class='m1-info-card' style='border-top:3px solid #22c55e;'><h4><i class='fa-solid fa-gears m1-icon' style='color:#22c55e;'></i>Gestión de Datos</h4><p>Ejecuta y mantiene las capacidades.</p><ul><li>Captura e integración.</li><li>Almacenamiento y transformación.</li><li>Documentación.</li><li>Protección y disponibilidad.</li><li>Controles y monitoreo.</li></ul></div></div><div class='m1-callout'>Una regla puede ser definida o validada por el área que conoce el proceso, mientras que su implementación puede requerir cambios en un formulario, una integración o una base de datos.</div></div>",
+                contentHtml: "<div class='m1-content-shell'><div class='m1-kicker'>Gobierno de Datos y Gestión de Datos</div><div class='m1-compare-grid'><div class='m1-info-card' style='border-top:3px solid #38bdf8;'><h4><i class='fa-solid fa-compass m1-icon'></i>Gobierno de Datos</h4><p>Establece el rumbo y las condiciones.</p><ul><li>Responsabilidades.</li><li>Reglas y políticas.</li><li>Prioridades.</li><li>Criterios de decisión.</li><li>Mecanismos de supervisión.</li></ul></div><div class='m1-info-card' style='border-top:3px solid #22c55e;'><h4><i class='fa-solid fa-gears m1-icon' style='color:#22c55e;'></i>Gestión de Datos</h4><p>Ejecuta y mantiene las capacidades.</p><ul><li>Captura e integración.</li><li>Almacenamiento y transformación.</li><li>Documentación.</li><li>Protección y disponibilidad.</li><li>Controles y monitoreo.</li></ul></div></div><div class='m1-callout'>Una regla puede ser definida o validada por el área que conoce el proceso, mientras que su implementación puede requerir cambios en un formulario, una integración o una base de datos.</div></div>",
                 script: 'El Gobierno de Datos y la Gestión de Datos son complementarios. El Gobierno establece las reglas, responsabilidades, prioridades y mecanismos de supervisión. La Gestión aplica procesos y capacidades para capturar, almacenar, transformar, documentar, proteger y disponer los datos. Esto no significa que trabajen de manera separada. Los responsables funcionales y técnicos deben coordinar continuamente. Una regla puede ser definida o validada por el área que conoce el proceso, mientras que su implementación puede requerir cambios en un formulario, una integración o una base de datos. Cuando ambos componentes se articulan, se generan beneficios concretos para las personas y para la institución.'
             },
             {
                 type: "reveal",
                 title: "Beneficios del Gobierno de Datos",
-                kicker: "Haz clic en cada grupo",
                 instruction: "Ordenar hoy evita reprocesar mañana. Revisa los beneficios para el colaborador y para Osinergmin.",
                 cards: [
                     { title: "Para el colaborador", icon: "fa-user", body: "<ul><li>Menos tiempo buscando o conciliando información.</li><li>Mayor claridad sobre fuentes y responsables.</li><li>Menos correcciones manuales repetitivas.</li><li>Mayor confianza para informar y decidir.</li><li>Mejor coordinación entre áreas.</li></ul>" },
@@ -4331,7 +4339,14 @@
                 </div>
             `;
         } else if (slide.type === "content") {
-            slideBody.innerHTML = slide.contentHtml;
+            const hasTitleInContent = slide.contentHtml && (slide.contentHtml.includes(slide.title) || slide.contentHtml.includes('slide-title') || slide.contentHtml.includes('m1-section-title'));
+            const headerHtml = (slide.title && !hasTitleInContent) ? `<h3 style="font-size:1.15rem; color:#ffffff; font-weight:700; text-align:center; margin:0 0 0.5rem 0; text-transform:uppercase; letter-spacing:0.5px;">${slide.title}</h3>` : '';
+            slideBody.innerHTML = `
+                <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; box-sizing:border-box;">
+                    ${headerHtml}
+                    ${slide.contentHtml}
+                </div>
+            `;
         } else if (slide.type === "multiSelect") {
             let optionsHtml = '';
             slide.options.forEach((option, index) => {
@@ -4360,7 +4375,7 @@
             });
             slideBody.innerHTML = `
                 <div class="m1-content-shell">
-                    <div class="m1-kicker">${slide.kicker || 'Explora el concepto'}</div>
+                    <div class="m1-kicker">${slide.kicker  || ""}</div>
                     <h3 class="m1-section-title">${slide.title}</h3>
                     <p class="m1-lead">${slide.instruction || ''}</p>
                     <div class="m1-reveal-grid">${cardsHtml}</div>

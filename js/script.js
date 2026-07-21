@@ -80,12 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             "2": {
-                name: "Módulo 2: Roles y Responsabilidades",
-                lesson: "2.1. El Comité y el OGD",
-                videoLabel: "EL ECOSISTEMA HUMANO",
-                desc: "El gobierno de datos no es un proyecto exclusivo de TI, sino un esfuerzo transversal. En este módulo definiremos los roles clave.",
+                name: "Módulo 2: Gobierno de Datos en acción",
+                lesson: "2.1. Roles y responsabilidades",
+                videoLabel: "ROLES Y RESPONSABILIDADES",
+                desc: "El Gobierno de Datos funciona cuando las responsabilidades están claras y las personas coordinan sus decisiones.",
                 details: [
-                    { title: "El Comité y el OGD", icon: "fa-user-tie", color: "var(--accent-blue)", text: "El Oficial de Gobierno de Datos actúa como director de orquesta, supervisado por la alta dirección." },
+                    { title: "Oficial de Gobierno de Datos (OGD)", icon: "fa-user-tie", color: "var(--accent-blue)", text: "Supervisa y articula de manera transversal el cumplimiento del marco institucional." },
                     { title: "Dueño del Dato", icon: "fa-user-shield", color: "var(--accent-green)", text: "Responsable de definir el propósito, aprobar reglas y velar por la calidad de sus datos." },
                     { title: "Custodio del Dato", icon: "fa-user-gear", color: "#a855f7", text: "Asegura la integridad técnica del dato y traduce las reglas de negocio a validaciones." }
                 ]
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (data) {
             title.textContent = data.lesson;
             contentTitle.textContent = data.name;
-            breadcrumb.textContent = `Mis cursos / Gobierno de Datos / ${data.name} / ${data.lesson}`;
+            breadcrumb.textContent = `Mis cursos / Data Power: Impulsando Osinergmin con la Gobernanza de Datos / ${data.name} / ${data.lesson}`;
             if (videoTitle) videoTitle.textContent = data.videoLabel;
             if (videoModule) videoModule.textContent = data.name;
 

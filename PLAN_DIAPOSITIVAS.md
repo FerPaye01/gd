@@ -1,6 +1,6 @@
 # 📊 Plan: Conversión del Curso "Gobierno de Datos" a Diapositivas PowerPoint
 
-> **Curso:** Gobierno de Datos: Fundamentos y Aplicaciones  
+> **Curso:** Data Power: Impulsando Osinergmin con la Gobernanza de Datos  
 > **Institución:** Universidad Corporativa Osinergmin  
 > **Autor del plan:** Oficina de Gobierno de Datos  
 > **Fecha:** Julio 2026  
@@ -158,28 +158,34 @@ gobierno-datos-curso-v-preliminar/
 
 ---
 
-### Módulo 5 — Metadatos y Trazabilidad
+### Módulo 5 — Seguridad y Ética
 
-**Título SCORM:** `5.1. ADN del Dato`  
-**Total de slides en HTML:** ~9  
+**Título SCORM:** `5.1. Uso seguro, responsable y ético de los datos`  
+**Total de slides en HTML:** 14  
 
 | # | Tipo | Título de la diapositiva |
 |---|------|--------------------------|
-| 1 | Portada | Gobierno de Datos — Metadatos y Trazabilidad |
-| 2 | Intro | Módulo 5: El ADN del Dato — Metadatos y Linaje |
-| 3 | Contenido | ¿Qué son los Metadatos? (Metáfora del pasaporte) |
-| 4 | Contenido | Tipos de Metadatos (Negocio / Técnico / Operacional) |
-| 5 | Contenido | El Linaje de Datos (Data Lineage) — El pasaporte del dato |
-| 6 | Contenido | Catálogo de Datos como herramienta central |
-| 7 | Contenido | Impacto de los Metadatos en la Toma de Decisiones |
-| 8 | Ejercicio | Ejercicios de metadatos y linaje |
-| 9 | Cierre | ¡Felicitaciones! Has completado la actividad 5.1 |
+| 1 | Portada | Uso seguro, responsable y ético de los datos |
+| 2 | Intro | ¿Qué debo considerar antes de consultar, modificar, compartir o utilizar un dato? |
+| 3 | Contenido | Tener acceso no significa poder usar el dato para cualquier finalidad |
+| 4 | Contenido | No todos los datos requieren el mismo nivel de protección |
+| 5 | Contenido | Antes de utilizar o compartir un dato, verifica |
+| 6 | Contenido | Utiliza solo los datos necesarios |
+| 7 | Contenido | Prácticas seguras en el trabajo cotidiano |
+| 8 | Contenido | Datos personales y privacidad (Ley N° 29733) |
+| 9 | Contenido | Ocultar no siempre significa proteger |
+| 10 | Contenido | Uso ético de los datos y la inteligencia artificial |
+| 11 | Contenido | ¿Qué hago si detecto una exposición o uso inadecuado? |
+| 12 | Ejercicio | Actividad: ¿Uso adecuado o situación de riesgo? |
+| 13 | Contenido | Caso práctico: compartir con urgencia |
+| 14 | Cierre | Ideas clave |
 
 **Conceptos clave a mantener:**
-- Metadatos de negocio, técnicos y operacionales
-- Linaje de datos (origen → transformación → destino)
-- Catálogo de datos como herramienta de búsqueda
-- Impacto en auditoría y transparencia
+- Condiciones y finalidad del acceso a datos
+- Niveles de protección (Público / Uso interno / Restringido / Personal)
+- Minimización de datos y prácticas seguras cotidianas
+- Protección de datos personales (Ley N° 29733) y uso ético de IA
+- Protocolo de reporte de incidentes y seguridad
 
 ---
 
@@ -397,4 +403,4 @@ COLORS = {
 
 ---
 
-*Plan generado el 14 de julio de 2026 — Gobierno de Datos: Fundamentos y Aplicaciones — Osinergmin*
+*Plan generado el 14 de julio de 2026 — Data Power: Impulsando Osinergmin con la Gobernanza de Datos — Osinergmin*
